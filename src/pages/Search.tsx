@@ -1,6 +1,5 @@
 import { useDispatch } from "react-redux";
 import search from "../assets/icons/search.svg";
-import NewsSection from "../components/cards/NewsSection";
 import { useSelector } from "react-redux";
 import { feedActions } from "../store/feedSlice";
 import { RootState } from "../store/store";
