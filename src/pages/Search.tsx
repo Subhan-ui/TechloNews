@@ -6,6 +6,7 @@ import { feedActions } from "../store/feedSlice";
 import { RootState } from "../store/store";
 
 import { NYTResponse, NYTSearch } from "../models/cardData";
+import SearchSection from "../components/searchSection/SearchSection";
 
 const Search = () => {
   const dispatch = useDispatch();
@@ -30,7 +31,7 @@ const Search = () => {
           published_date: dat.pub_date,
           multimedia: dat.multimedia,
         }));
-        dispatch(feedActions.settingData(data1));
+        dispatch(feedActions.handleQueryData(data1));
       })
       .catch((err) => console.log(err));
   };
@@ -56,11 +57,11 @@ const Search = () => {
           />
         </form>
       </div>
-      <NewsSection>
+      <SearchSection>
         <h4 className="py-2 pl-4 font-semibold text-lg bg-white">
           Search Results
         </h4>
-      </NewsSection>
+      </SearchSection>
     </>
   );
 };
