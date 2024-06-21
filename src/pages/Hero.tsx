@@ -1,31 +1,25 @@
 import { useSelector } from "react-redux";
 import { RootState } from "../store/store";
-import { NYTResponse } from "../models/cardData";
-import { useEffect, useState } from "react";
+import { NYTResponse, NYTResponseItem } from "../models/cardData";
 import AllDetails from "../components/detail/AllDetails";
 import ErrorAlert from "../components/errorAlert/ErrorAlert";
 import NewsSection from "../components/cards/NewsSection";
 import Filter from "../components/pickCards/Filter";
+import { useEffect, useState } from "react";
 
 const Hero = () => {
   const data = useSelector(
     (state: RootState) => state.feed.data as NYTResponse
   );
-  const [loading, setLoading] = useState(true);
-
+  const [element,setElement]=useState<NYTResponseItem>()
   useEffect(() => {
     if (data && data.length > 0) {
-      setLoading(false);
+      setElement(data[0]);
     }
   }, [data]);
-
-  if (loading) {
-    return <div>Loading...</div>;
-  }
-  const element = data[0];
   return (
     <>
-      <AllDetails
+      {element&&<AllDetails
         mt="112px"
         width="750px"
         widths="540px"
@@ -35,7 +29,7 @@ const Hero = () => {
         byline={element.byline}
         published_date={element.published_date}
         multimedia={element.multimedia[2]?.url}
-      />
+      />}
       <ErrorAlert />
       <NewsSection>
         <Filter />

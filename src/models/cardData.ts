@@ -7,7 +7,8 @@ export type CardData = {
   time: string;
 };
 
-export type NYTResponse = {
+export type NYTResponse = NYTResponseItem[];
+export type NYTResponseItem = {
   id: string; // Assuming id is a string, adjust if it's a different type
   title: string;
   abstract: string;
@@ -16,7 +17,7 @@ export type NYTResponse = {
   multimedia: {
     url: string;
   }[];
-}[];
+};
 
 export type NYTSearch = {
   snippet: string;

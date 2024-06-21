@@ -3,6 +3,7 @@ import { CardData } from "../../models/cardData";
 import { feedActions } from "../../store/feedSlice";
 import Time from "../detail/Time";
 import Reaction from "../detail/Reaction";
+import timeAgo from "../../hooks/convertTime";
 
 const Card: React.FC<CardData> = (props) => {
   const dispatch = useDispatch();
@@ -16,6 +17,7 @@ const Card: React.FC<CardData> = (props) => {
     }
     return words.slice(0, wordLimit).join(" ") + "...";
   };
+  const time = timeAgo(props.time);
   return (
     <>
       <div
@@ -35,7 +37,7 @@ const Card: React.FC<CardData> = (props) => {
         </p>
         <div className="absolute w-full bottom-0 ">
           <span className="relative left-5 ">
-            <Time time={props.time} writer={props.writer} />
+            <Time time={time} writer={props.writer} />
           </span>
           <hr className="mt-5" />
           <div className="h-12 flex justify-center items-center">
