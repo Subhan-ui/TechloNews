@@ -9,7 +9,7 @@ export type CardData = {
 
 export type NYTResponse = NYTResponseItem[];
 export type NYTResponseItem = {
-  id: string; // Assuming id is a string, adjust if it's a different type
+  id: string; 
   title: string;
   abstract: string;
   byline: string;

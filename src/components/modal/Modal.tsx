@@ -22,7 +22,6 @@ const Backdrop: React.FC<{ hiding: () => void }> = (props) => {
   );
 };
 const OnlyModal: React.FC<ModalProps> = (props) => {
-  
   return (
     <>
       <div className="md:block hidden fixed z-[250]  top-24 left-1/2 transform -translate-x-1/2 p-6 pt-0 rounded-lg w-[1462px] bg-white">
@@ -76,9 +75,9 @@ const OnlyModal: React.FC<ModalProps> = (props) => {
   );
 };
 
-const Modal: React.FC<ModalProps> = (props) => {
+const Modals: React.FC<ModalProps> = (props) => {
   return (
-    <>
+    <div className="animate_animated animate__backInUp">
       {ReactDOM.createPortal(
         <Backdrop hiding={props.hiding} />,
         document.getElementById("backdrop") as HTMLDivElement
@@ -87,8 +86,8 @@ const Modal: React.FC<ModalProps> = (props) => {
         <OnlyModal {...props} />,
         document.getElementById("modal") as HTMLDivElement
       )}
-    </>
+    </div>
   );
 };
 
-export default Modal;
+export default Modals;

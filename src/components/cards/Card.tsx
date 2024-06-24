@@ -4,19 +4,14 @@ import { feedActions } from "../../store/feedSlice";
 import Time from "../detail/Time";
 import Reaction from "../detail/Reaction";
 import timeAgo from "../../hooks/convertTime";
+import truncateString from "../../hooks/useTrucate";
 
 const Card: React.FC<CardData> = (props) => {
   const dispatch = useDispatch();
   const handleSelection = () => {
     dispatch(feedActions.handleCardClick(props));
   };
-  const truncateString = (str: string, wordLimit: number): string => {
-    const words = str.split(" ");
-    if (words.length <= wordLimit) {
-      return str;
-    }
-    return words.slice(0, wordLimit).join(" ") + "...";
-  };
+  
   const time = timeAgo(props.time);
   return (
     <>
@@ -37,7 +32,7 @@ const Card: React.FC<CardData> = (props) => {
         </p>
         <div className="absolute w-full bottom-0 ">
           <span className="relative left-5 ">
-            <Time time={time} writer={props.writer} />
+            <Time time={time} writer={truncateString(props.writer,5)} />
           </span>
           <hr className="mt-5" />
           <div className="h-12 flex justify-center items-center">

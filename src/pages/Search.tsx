@@ -6,24 +6,31 @@ import { RootState } from "../store/store";
 
 import { NYTResponse, NYTSearch } from "../models/cardData";
 import SearchSection from "../components/searchSection/SearchSection";
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { useNavigate, useSearchParams } from "react-router-dom";
+import { searchURL } from "../constant/links";
 
 const Search = () => {
   const dispatch = useDispatch();
   const [isLoading, setIsLoading] = useState(false);
   const searchText = useSelector((state: RootState) => state.feed.query);
-  const navigate = useNavigate()
+  const navigate = useNavigate();
+  const [searchParams] = useSearchParams();
+  
+  const searchData = searchParams.get("q");
+  const url = searchURL(searchData);
+  useEffect(() => {
+    if (searchData) {
+      dispatch(feedActions.handleSearch(searchData));
+      handleFetching();
+    }
+  }, [searchParams]);
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
+  console.log(searchData)
+  const handleFetching = () => {
     setIsLoading(false);
-    navigate(`/search?q=${searchText.split(' ').join('%20')}`)
-    fetch(
-      `https://api.nytimes.com/svc/search/v2/articlesearch.json?begin_date=20120101&end_date=20231231&q=${searchText
-        .split(" ")
-        .join("%20")}&api-key=HMJwQch2Zmw48r1NWGfBR9zoG9YAuHeT`
-    )
+    
+    fetch(url)
       .then((response) => response.json())
       .then((res) => {
         let data = res.response.docs;
@@ -39,6 +46,11 @@ const Search = () => {
       })
       .catch((err) => console.log(err));
     setIsLoading(true);
+  };
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    navigate(`/search?q=${searchText.split(" ").join("%20")}`);
+    handleFetching();
   };
   return (
     <>
@@ -58,7 +70,7 @@ const Search = () => {
             onChange={(e) => dispatch(feedActions.handleSearch(e.target.value))}
             type="text"
             className="md:w-[800px] w-full h-[54px] md:pl-16 pl-10"
-            placeholder="Corona Virus Updates"
+            placeholder="Gaza"
           />
         </form>
       </div>

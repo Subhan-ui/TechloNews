@@ -1,3 +1,5 @@
+import truncateString from "../../hooks/useTrucate";
+
 const PickCard: React.FC<{
   title: string;
   abstract: string;
@@ -5,13 +7,7 @@ const PickCard: React.FC<{
   writer: string;
   time: string;
 }> = (props) => {
-  const truncateString = (str: string, wordLimit: number): string => {
-    const words = str.split(" ");
-    if (words.length <= wordLimit) {
-      return str;
-    }
-    return words.slice(0, wordLimit).join(" ") + "...";
-  };
+  
   return (
     <div className="md:w-[675px] w-full h-[376px] md:flex-nowrap flex-wrap md:h-[150px] md:flex-shrink-0 flex ">
       <img
