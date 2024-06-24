@@ -3,7 +3,7 @@ import { NYTResponse } from "../../models/cardData";
 
 import { useSelector } from "react-redux";
 import { RootState } from "../../store/store";
-import Cards from "../cards/Cards";
+import Cards from "../cards/SearchCards";
 
 const SearchSection: React.FC<{ children: React.ReactNode }> = (props) => {
   const data = useSelector(

@@ -6,14 +6,16 @@ import { RootState } from "../store/store";
 
 import { NYTResponse, NYTSearch } from "../models/cardData";
 import SearchSection from "../components/searchSection/SearchSection";
+import { useState } from "react";
 
 const Search = () => {
   const dispatch = useDispatch();
+  const [isLoading, setIsLoading] = useState(false);
   const searchText = useSelector((state: RootState) => state.feed.query);
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-
+    setIsLoading(false);
     fetch(
       `https://api.nytimes.com/svc/search/v2/articlesearch.json?begin_date=20120101&end_date=20231231&q=${searchText
         .split(" ")
@@ -33,6 +35,7 @@ const Search = () => {
         dispatch(feedActions.handleQueryData(data1));
       })
       .catch((err) => console.log(err));
+    setIsLoading(true);
   };
   return (
     <>
@@ -56,11 +59,13 @@ const Search = () => {
           />
         </form>
       </div>
-      <SearchSection>
-        <h4 className="py-2 pl-4 font-semibold text-lg bg-white">
-          Search Results
-        </h4>
-      </SearchSection>
+      {isLoading && (
+        <SearchSection>
+          <h4 className="py-2 pl-4 font-semibold text-lg bg-white">
+            Search Results
+          </h4>
+        </SearchSection>
+      )}
     </>
   );
 };
