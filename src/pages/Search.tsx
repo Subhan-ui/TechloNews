@@ -7,15 +7,18 @@ import { RootState } from "../store/store";
 import { NYTResponse, NYTSearch } from "../models/cardData";
 import SearchSection from "../components/searchSection/SearchSection";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Search = () => {
   const dispatch = useDispatch();
   const [isLoading, setIsLoading] = useState(false);
   const searchText = useSelector((state: RootState) => state.feed.query);
+  const navigate = useNavigate()
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsLoading(false);
+    navigate(`/search?q=${searchText.split(' ').join('%20')}`)
     fetch(
       `https://api.nytimes.com/svc/search/v2/articlesearch.json?begin_date=20120101&end_date=20231231&q=${searchText
         .split(" ")
