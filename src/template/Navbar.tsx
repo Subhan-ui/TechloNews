@@ -15,7 +15,8 @@ const Navbar = () => {
   const [show, setShow] = useState(false);
   const dispatch = useDispatch();
   const handleNavigation = (category: string) => {
-    dispatch(feedActions.settingType(category));
+    const cat = category.split(' ').join('%20')
+    dispatch(feedActions.settingType(cat));
     setShow(false);
   };
 

@@ -26,7 +26,6 @@ const Search = () => {
     }
   }, [searchParams]);
 
-  console.log(searchData)
   const handleFetching = () => {
     setIsLoading(false);
     

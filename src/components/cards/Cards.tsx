@@ -6,7 +6,7 @@ const Cards: React.FC<{ data: NYTResponse }> = (props) => {
   return (
     <>
       <div className="mt-2 flex justify-center gap-5 md:mx-0 mx-2 flex-wrap px-[1px]">
-        {props.data.map((arr) => {
+        {props.data && props.data.map((arr) => {
           return (
             <Card
               key={arr.title}
