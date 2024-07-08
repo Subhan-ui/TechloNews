@@ -8,8 +8,8 @@ const timeAgo = (timestamp: string): string => {
   const diffHours = Math.abs(Math.floor(diffMinutes / 60));
   const diffDays = Math.abs(Math.floor(diffHours / 24));
   const diffWeeks = Math.abs(Math.floor(diffDays / 7));
-  const diffMonths = Math.abs(Math.floor(diffDays / 30)); 
-  const diffYears = Math.abs(Math.floor(diffDays / 365)); 
+  const diffMonths = Math.abs(Math.floor(diffDays / 30));
+  const diffYears = Math.abs(Math.floor(diffDays / 365));
 
   if (diffSeconds < 60) {
     return `${diffSeconds} seconds ago`;

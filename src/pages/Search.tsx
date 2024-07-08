@@ -1,56 +1,14 @@
 import { useDispatch } from "react-redux";
 import search from "../assets/icons/search.svg";
-import { useSelector } from "react-redux";
 import { feedActions } from "../store/feedSlice";
-import { RootState } from "../store/store";
 
-import { NYTResponse, NYTSearch } from "../models/cardData";
 import SearchSection from "../components/searchSection/SearchSection";
-import { useEffect, useState } from "react";
-import { useNavigate, useSearchParams } from "react-router-dom";
-import { searchURL } from "../constant/links";
+import useQuery from "../hooks/useQuery";
 
 const Search = () => {
   const dispatch = useDispatch();
-  const [isLoading, setIsLoading] = useState(false);
-  const searchText = useSelector((state: RootState) => state.feed.query);
-  const navigate = useNavigate();
-  const [searchParams] = useSearchParams();
-  
-  const searchData = searchParams.get("q");
-  const url = searchURL(searchData);
-  useEffect(() => {
-    if (searchData) {
-      dispatch(feedActions.handleSearch(searchData));
-      handleFetching();
-    }
-  }, [searchParams]);
+  const { isLoading, handleSubmit, searchText } = useQuery();
 
-  const handleFetching = () => {
-    setIsLoading(false);
-    
-    fetch(url)
-      .then((response) => response.json())
-      .then((res) => {
-        let data = res.response.docs;
-        let data1: NYTResponse = data.map((dat: NYTSearch) => ({
-          id: dat.snippet,
-          title: dat.abstract,
-          abstract: dat.lead_paragraph,
-          byline: dat.byline.original,
-          published_date: dat.pub_date,
-          multimedia: dat.multimedia,
-        }));
-        dispatch(feedActions.handleQueryData(data1));
-      })
-      .catch((err) => console.log(err));
-    setIsLoading(true);
-  };
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    navigate(`/search?q=${searchText.split(" ").join("%20")}`);
-    handleFetching();
-  };
   return (
     <>
       <div className="w-full h-[80vh] flex gap-8 flex-col justify-center items-center">
