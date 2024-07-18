@@ -3,6 +3,7 @@ import ErrorAlert from "../components/errorAlert/ErrorAlert";
 import NewsSection from "../components/cards/NewsSection";
 import Filter from "../components/pickCards/Filter";
 import useFirst from "../hooks/useFirst";
+import image from '../assets/cards/image.png'
 
 const Hero = () => {
   const { element } = useFirst();
@@ -18,7 +19,7 @@ const Hero = () => {
           abstract={element.abstract}
           byline={element.byline}
           published_date={element.published_date}
-          multimedia={element.multimedia[2]?.url}
+          multimedia={element.multimedia[2]?.url || image}
         />
       )}
       <ErrorAlert />

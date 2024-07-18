@@ -21,8 +21,8 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="w-full bg-white fixed z-[500] ">
-      <div className="xl:w-[1366px] w-[100vw] mx-auto xl:px-9 px-8 flex  h-[80px] justify-between items-center">
+    <nav className="w-[100vw] bg-white fixed z-[500] ">
+      <div className="3xl:w-[1366px] w-[100vw] mx-auto xl:px-9 px-8 flex  h-[80px] justify-between items-center">
         <Link to="/">
           <img src={img} alt="Navbar-Image" className=" w-[62px] h-[52px]" />
         </Link>

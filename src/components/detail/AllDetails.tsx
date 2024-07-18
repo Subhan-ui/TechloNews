@@ -18,16 +18,16 @@ const AllDetails: React.FC<{
   return (
     <>
       <div
-        className={`md:flex hidden gap-16 items-center `}
+        className={`md:flex  hidden xl:gap-16 md:gap-7  md::mx-3 items-center justify-center `}
         style={{ marginTop: props.mt }}
       >
         <img
           src={props.multimedia || image}
           alt="Hero"
-          className={`w-[750px] h-[500px]`}
+          className={`3xl:w-[750px] 3xl:h-[500px] xl:w-[650px] xl:h-[450px] lg:w-[500px] lg:h-[400px]`}
         />
-        <div className={` h-[320px] w-[540px]`}>
-          <div className={`flex justify-between w-[540px] mb-[33px]`}>
+        <div className={` xl:h-[320px] xl:w-[540px] md:h-[320px] md:w-[400px]`}>
+          <div className={`flex justify-between  xl:w-[400px] 3xl:w-[540px] lg:w-[400px] md:w-[320px] mb-[33px]`}>
             <span className="text-[#C31815] font-bold">Trending</span>
             <Reaction className="" />
           </div>

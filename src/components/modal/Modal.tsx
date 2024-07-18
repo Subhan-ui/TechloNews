@@ -2,6 +2,7 @@ import cross from "../../assets/icons/cross.svg";
 
 import ReactDOM from "react-dom";
 import AllDetails from "../detail/AllDetails";
+import timeAgo from "../../hooks/convertTime";
 
 type ModalProps = {
   title: string;
@@ -22,6 +23,7 @@ const Backdrop: React.FC<{ hiding: () => void }> = (props) => {
   );
 };
 const OnlyModal: React.FC<ModalProps> = (props) => {
+  const time = timeAgo(props.published_date);
   return (
     <>
       <div className="md:block hidden fixed z-[250]  top-24 left-1/2 transform -translate-x-1/2 p-6 pt-0 rounded-lg w-[1462px] bg-white">
@@ -45,7 +47,8 @@ const OnlyModal: React.FC<ModalProps> = (props) => {
           multimedia={props.multimedia}
         />
       </div>
-      <div className="block md:hidden fixed z-[250] top-[104px] w-[92vw]  left-1/2 transform -translate-x-1/2 p-6 pt-0 rounded-lg h-[846px] bg-white">
+
+      <div className="block md:hidden fixed overflow-y-scroll h-[85vh] pb-4 z-[250] top-[104px] w-[92vw]  left-1/2 transform -translate-x-1/2 p-6 pt-0 rounded-lg  bg-white">
         <div className="flex justify-end relative left-3">
           <img
             src={cross}
@@ -57,14 +60,14 @@ const OnlyModal: React.FC<ModalProps> = (props) => {
         <div className="mt-2 relative ">
           <img
             src={props.multimedia}
-            className="h-[347px]"
+            className="h-[347px] text-center"
             alt="image of your card"
           />
           <p className="text-[#C31815] font-bold mt-4">Trending</p>
           <h1 className="text-2xl font-semibold font-serif">{props.title}</h1>
           <p className="text-[#2A2A2A] text-sm">{props.abstract}</p>
           <div className="absolute -bottom-[194px] w-full">
-            <p className="text-sm text-center ">{props.published_date}</p>
+            <p className="text-sm text-center ">{time}</p>
             <p className="pt-2 text-center text-sm text-[#2A2A2A] opacity-70">
               {props.byline}
             </p>

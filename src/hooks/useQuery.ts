@@ -39,7 +39,9 @@ const useQuery = () => {
         }));
         dispatch(feedActions.handleQueryData(data1));
       })
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        return;
+      });
     setIsLoading(true);
   };
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {

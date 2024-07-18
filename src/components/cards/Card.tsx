@@ -5,6 +5,7 @@ import Time from "../detail/Time";
 import Reaction from "../detail/Reaction";
 import timeAgo from "../../hooks/convertTime";
 import truncateString from "../../hooks/useTrucate";
+import image from '../../assets/cards/image.png'
 
 const Card: React.FC<CardData> = (props) => {
   const dispatch = useDispatch();
@@ -20,7 +21,7 @@ const Card: React.FC<CardData> = (props) => {
         onClick={handleSelection}
       >
         <img
-          src={props.image}
+          src={props.image || image}
           alt="image of card"
           className="h-[210px] w-full"
         />

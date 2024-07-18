@@ -37,7 +37,7 @@ const useFetch = () => {
       const res = await response.json();
       dispatch(action(res.results));
     } catch (err) {
-      console.error(err);
+      return;
     }
   };
   return { loading };
