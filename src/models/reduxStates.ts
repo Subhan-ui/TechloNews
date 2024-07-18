@@ -18,4 +18,5 @@ export type reduxStates = {
   query: string;
   queryData: NYTResponse;
 };
+
 export type section = { section: string; display_name: string }[];
