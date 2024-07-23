@@ -1,6 +1,6 @@
 import Card from "./Card";
-import image from "../../assets/cards/image.png";
-import { NYTResponse } from "../../models/cardData";
+import image from "../../assets/images/image.png";
+import { NYTResponse } from "../../types/cardData";
 
 const Cards: React.FC<{ data: NYTResponse }> = (props) => {
   return (

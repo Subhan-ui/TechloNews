@@ -1,16 +1,16 @@
-import Footer from "./Footer";
-import Navbar from "./Navbar";
+import Footer from "./footer/Footer";
+import Navbar from "./navbar/Navbar";
 import { useDispatch, useSelector } from "react-redux";
-import { feedActions } from "../store/feedSlice";
-import { RootState } from "../store/store";
-import { CardData } from "../models/cardData";
-import Modal from "../components/modal/Modal";
-import Loader from "../components/Loader/Loader";
-import useFetch from "../hooks/useFetch";
+import { feedActions } from "../../store/slices/feedSlice";
+import { RootState } from "../../store/store";
+import { CardData } from "../../types/cardData";
+import Modal from "../modal/Modal";
+import Loader from "../Loader/Loader";
+import useFetch from "../../hooks/useFetch";
 
 const Layout: React.FC<{ children: React.ReactNode }> = (props) => {
   const dispatch = useDispatch();
-  const { loading } = useFetch();
+  const { loading, loadingData } = useFetch();
   const card = useSelector(
     (state: RootState) => state.feed.selectedCard
   ) as CardData;
@@ -37,7 +37,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = (props) => {
         />
       )}
       <Navbar />
-      {props.children}
+      {loadingData ? <div className="w-full h-[100vh] flex justify-center items-center"><Loader /></div> : props.children}
       <Footer />
     </>
   );

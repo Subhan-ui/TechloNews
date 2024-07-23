@@ -2,8 +2,8 @@ import { useNavigate, useSearchParams } from "react-router-dom";
 import { searchURL } from "../constant/links";
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
-import { feedActions } from "../store/feedSlice";
-import { NYTResponse, NYTSearch } from "../models/cardData";
+import { feedActions } from "../store/slices/feedSlice";
+import { NYTResponse, NYTSearch } from "../types/cardData";
 import { useSelector } from "react-redux";
 import { RootState } from "../store/store";
 
@@ -39,9 +39,7 @@ const useQuery = () => {
         }));
         dispatch(feedActions.handleQueryData(data1));
       })
-      .catch((err) => {
-        return;
-      });
+
     setIsLoading(true);
   };
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {

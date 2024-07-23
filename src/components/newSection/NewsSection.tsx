@@ -1,8 +1,8 @@
 import { useState } from "react";
-import { NYTResponse } from "../../models/cardData";
+import { NYTResponse } from "../../types/cardData";
 
 import PickCards from "../pickCards/PickCards";
-import Cards from "./Cards";
+import Cards from "../cards/Cards";
 import { useSelector } from "react-redux";
 import { RootState } from "../../store/store";
 
@@ -24,7 +24,7 @@ const NewsSection: React.FC<{ children: React.ReactNode }> = (props) => {
       <div className="text-center my-10">
         <button
           onClick={handleViewMore}
-          className=" border-[1px] border-[#C31815] text-[#C31815] text-sm px-11 py-4"
+          className="font-poppins border-[1px] border-red text-red text-sm px-11 py-4"
         >
           {small ? "VIEW MORE" : "View Less"}
         </button>

@@ -1,9 +1,9 @@
-import AllDetails from "../components/detail/AllDetails";
-import ErrorAlert from "../components/errorAlert/ErrorAlert";
-import NewsSection from "../components/cards/NewsSection";
-import Filter from "../components/pickCards/Filter";
-import useFirst from "../hooks/useFirst";
-import image from '../assets/cards/image.png'
+import AllDetails from "../../components/detail/AllDetails";
+import ErrorAlert from "../../components/errorAlert/ErrorAlert";
+import NewsSection from "../../components/newSection/NewsSection";
+import Filter from "../../components/filter/Filter";
+import useFirst from "../../hooks/useFirst";
+import image from '../../assets/images/image.png'
 
 const Hero = () => {
   const { element } = useFirst();
@@ -11,7 +11,7 @@ const Hero = () => {
     <>
       {element && (
         <AllDetails
-          mt="112px"
+          marginTop="112px"
           width="750px"
           widths="540px"
           title={element.title}

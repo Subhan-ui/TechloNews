@@ -1,6 +1,6 @@
-import Reaction from "./Reaction";
-import Time from "./Time";
-import image from "../../assets/cards/image.png";
+import Reaction from "../reaction/Reaction";
+import Time from "../time/Time";
+import image from "../../assets/images/image.png";
 import timeAgo from "../../hooks/convertTime";
 
 const AllDetails: React.FC<{
@@ -12,14 +12,14 @@ const AllDetails: React.FC<{
   byline: string;
   published_date: string;
   multimedia: string;
-  mt: string;
+  marginTop: string;
 }> = (props) => {
   const time = timeAgo(props.published_date);
   return (
     <>
       <div
         className={`md:flex  hidden xl:gap-16 md:gap-7  md::mx-3 items-center justify-center `}
-        style={{ marginTop: props.mt }}
+        style={{ marginTop: props.marginTop }}
       >
         <img
           src={props.multimedia || image}
@@ -28,14 +28,14 @@ const AllDetails: React.FC<{
         />
         <div className={` xl:h-[320px] xl:w-[540px] md:h-[320px] md:w-[400px]`}>
           <div className={`flex justify-between  xl:w-[400px] 3xl:w-[540px] lg:w-[400px] md:w-[320px] mb-[33px]`}>
-            <span className="text-[#C31815] font-bold">Trending</span>
+            <span className="text-red font-bold font-poppins">Trending</span>
             <Reaction className="" />
           </div>
           <div>
-            <h4 className="font-bold text-3xl text-left font-serif text-[#2A2A2A]">
+            <h4 className="font-bold text-3xl text-left font-plex text-gray">
               {props.title}
             </h4>
-            <p className="text-[15px] text-[#2A2A2A] leading-6">
+            <p className="text-[15px] text-gray leading-6 font-poppins">
               {props.abstract}
             </p>
           </div>

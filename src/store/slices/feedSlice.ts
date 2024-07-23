@@ -1,6 +1,6 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
-import { CardData, NYTResponse } from "../models/cardData";
-import { reduxStates, section } from "../models/reduxStates";
+import { CardData, NYTResponse } from "../../types/cardData";
+import { reduxStates, section } from "../../types/reduxStates";
 
 const initialState: reduxStates = {
   data: [],
@@ -26,7 +26,8 @@ const feedSlice = createSlice({
   initialState,
   reducers: {
     settingData(state, action: PayloadAction<NYTResponse>) {
-      state.data = action.payload;
+      const data = action.payload.filter((dat) => dat.abstract.length > 0);
+      state.data = data;
     },
     settingType(state, action: PayloadAction<string>) {
       state.typeOfData = action.payload;

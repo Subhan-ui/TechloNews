@@ -3,16 +3,8 @@ import cross from "../../assets/icons/cross.svg";
 import ReactDOM from "react-dom";
 import AllDetails from "../detail/AllDetails";
 import timeAgo from "../../hooks/convertTime";
+import { ModalProps } from "../../types/modalTypes";
 
-type ModalProps = {
-  title: string;
-  id: string;
-  abstract: string;
-  byline: string;
-  published_date: string;
-  multimedia: string;
-  hiding: () => void;
-};
 
 const Backdrop: React.FC<{ hiding: () => void }> = (props) => {
   return (
@@ -36,7 +28,7 @@ const OnlyModal: React.FC<ModalProps> = (props) => {
           />
         </div>
         <AllDetails
-          mt="40px"
+          marginTop="40px"
           width="750px"
           widths="540px"
           title={props.title}
@@ -63,12 +55,12 @@ const OnlyModal: React.FC<ModalProps> = (props) => {
             className="h-[347px] text-center"
             alt="image of your card"
           />
-          <p className="text-[#C31815] font-bold mt-4">Trending</p>
+          <p className="text-red font-bold mt-4">Trending</p>
           <h1 className="text-2xl font-semibold font-serif">{props.title}</h1>
-          <p className="text-[#2A2A2A] text-sm">{props.abstract}</p>
+          <p className="text-gray text-sm">{props.abstract}</p>
           <div className="absolute -bottom-[194px] w-full">
             <p className="text-sm text-center ">{time}</p>
-            <p className="pt-2 text-center text-sm text-[#2A2A2A] opacity-70">
+            <p className="pt-2 text-center text-sm text-gray opacity-70">
               {props.byline}
             </p>
           </div>

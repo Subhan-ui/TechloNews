@@ -1,15 +1,15 @@
-import Card from "./Card";
-import image from "../../assets/cards/image.png";
-import { NYTResponse } from "../../models/cardData";
+import Card from "../cards/Card";
+import image from "../../assets/images/image.png";
+import { NYTResponse } from "../../types/cardData";
 
 const Cards: React.FC<{ data: NYTResponse }> = (props) => {
   return (
     <>
       <div className="mt-2 flex justify-center gap-5 md:mx-0 mx-2 flex-wrap px-[1px]">
         {props.data.map((arr) => {
-    const imageUrl = arr.multimedia?.[2]?.url
-              ? `https://www.nytimes.com/${arr.multimedia[2].url}`
-              : image;
+          const imageUrl = arr.multimedia?.[2]?.url
+            ? `https://www.nytimes.com/${arr.multimedia[2].url}`
+            : image;
           return (
             <Card
               key={arr.title}

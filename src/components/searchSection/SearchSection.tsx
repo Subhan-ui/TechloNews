@@ -1,9 +1,9 @@
 import { useState } from "react";
-import { NYTResponse } from "../../models/cardData";
+import { NYTResponse } from "../../types/cardData";
 
 import { useSelector } from "react-redux";
 import { RootState } from "../../store/store";
-import Cards from "../cards/SearchCards";
+import Cards from "../searchCardSection/SearchCards";
 
 const SearchSection: React.FC<{ children: React.ReactNode }> = (props) => {
   const data = useSelector(
@@ -25,7 +25,7 @@ const SearchSection: React.FC<{ children: React.ReactNode }> = (props) => {
         <div className="text-center my-10">
           <button
             onClick={handleViewMore}
-            className=" border-[1px] border-[#C31815] text-[#C31815] text-sm px-11 py-4"
+            className=" border-[1px] border-red text-red text-sm px-11 py-4"
           >
             {small ? "VIEW MORE" : "View Less"}
           </button>

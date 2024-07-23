@@ -1,9 +1,9 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
-import Layout from "./template/Layout";
+import Layout from "./components/template/Layout";
 
-import Hero from "./pages/Hero";
-import Search from "./pages/Search";
+import Hero from "./pages/hero/Hero";
+import Search from "./pages/search/Search";
 
 function App() {
   return (

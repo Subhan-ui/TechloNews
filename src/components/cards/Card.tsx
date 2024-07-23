@@ -1,11 +1,11 @@
 import { useDispatch } from "react-redux";
-import { CardData } from "../../models/cardData";
-import { feedActions } from "../../store/feedSlice";
-import Time from "../detail/Time";
-import Reaction from "../detail/Reaction";
+import { CardData } from "../../types/cardData";
+import { feedActions } from "../../store/slices/feedSlice";
+import Time from "../time/Time";
+import Reaction from "../reaction/Reaction";
 import timeAgo from "../../hooks/convertTime";
 import truncateString from "../../hooks/useTrucate";
-import image from '../../assets/cards/image.png'
+import image from '../../assets/images/image.png'
 
 const Card: React.FC<CardData> = (props) => {
   const dispatch = useDispatch();
@@ -25,10 +25,10 @@ const Card: React.FC<CardData> = (props) => {
           alt="image of card"
           className="h-[210px] w-full"
         />
-        <h4 className="font-semibold font-serif text-lg mt-2 px-5">
+        <h4 className="font-semibold font-plex text-lg mt-2 px-5">
           {truncateString(props.title, 14)}
         </h4>
-        <p className="text-sm leading-[22px] font-sans text-[#2A2A2A] px-5">
+        <p className="text-sm leading-[22px] font-nunito text-gray px-5">
           {truncateString(props.abstract, 24)}
         </p>
         <div className="absolute w-full bottom-0 ">

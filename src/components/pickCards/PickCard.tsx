@@ -16,10 +16,10 @@ const PickCard: React.FC<{
         className="h-[170px] w-full md:w-auto mx-4 md:mx-0 md:h-[148px]  "
       />
       <div className="md:mx-0 mx-4 pl-2">
-        <h3 className="font-serif font-semibold text-lg">
+        <h3 className="font-plex font-bold text-lg">
           {truncateString(props.title, 14)}
         </h3>
-        <p className="text-sm font-normal">
+        <p className="text-base text-gray font-nunito font-normal">
           {truncateString(props.abstract, 24)}
         </p>
       </div>

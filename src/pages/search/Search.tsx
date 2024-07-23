@@ -1,9 +1,9 @@
 import { useDispatch } from "react-redux";
-import search from "../assets/icons/search.svg";
-import { feedActions } from "../store/feedSlice";
+import search from "../../assets/icons/search.svg";
+import { feedActions } from "../../store/slices/feedSlice";
 
-import SearchSection from "../components/searchSection/SearchSection";
-import useQuery from "../hooks/useQuery";
+import SearchSection from "../../components/searchSection/SearchSection";
+import useQuery from "../../hooks/useQuery";
 
 const Search = () => {
   const dispatch = useDispatch();
@@ -12,7 +12,7 @@ const Search = () => {
   return (
     <>
       <div className="w-full h-[80vh] flex gap-8 flex-col justify-center items-center">
-        <h1 className="md:text-5xl text-3xl font-bold font-serif">
+        <h1 className="md:text-5xl text-5xl font-semibold font-plex">
           Search News
         </h1>
         <form
@@ -33,7 +33,7 @@ const Search = () => {
       </div>
       {isLoading && (
         <SearchSection>
-          <h4 className="py-2 pl-4 font-semibold text-lg bg-white">
+          <h4 className="py-2 pl-4 font-semibold font-poppins text-lg bg-white">
             Search Results
           </h4>
         </SearchSection>
