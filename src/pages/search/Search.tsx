@@ -35,7 +35,7 @@ const Search = () => {
       </div>
       {isLoading &&
         (loading ? (
-          <div className="w-full flex justify-center items-center">
+          <div className="w-full mb-12 flex justify-center items-center">
             <Loader />
           </div>
         ) : (

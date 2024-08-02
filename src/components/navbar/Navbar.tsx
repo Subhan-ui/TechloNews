@@ -1,8 +1,8 @@
-import img from "../../../assets/images/logo.png";
-import vector from "../../../assets/icons/vector.svg";
-import person from "../../../assets/icons/person.svg";
-import bar from "../../../assets/icons/bar.svg";
-import search from "../../../assets/icons/search.svg";
+import img from "../../assets/images/logo.png";
+import vector from "../../assets/icons/vector.svg";
+import person from "../../assets/icons/person.svg";
+import bar from "../../assets/icons/bar.svg";
+import search from "../../assets/icons/search.svg";
 import { useSelector } from "react-redux";
 import { RootState } from "../../store/store";
 import { useState } from "react";

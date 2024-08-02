@@ -34,7 +34,7 @@ const useQuery = () => {
       .then((response) => response.json())
       .then((res) => {
         setLoading(true);
-        let data = res.response.docs;
+        let data = res.response?.docs;
         let data1: NYTResponse = data?.map((dat: NYTSearch) => ({
           id: dat.snippet,
           title: dat.abstract,

@@ -1,8 +1,8 @@
-import image from "../../../assets/images/footerLogo.png";
-import wifi from "../../../assets/icons/footer/wifilogo.svg";
-import twitter from "../../../assets/icons/footer/twitter.svg";
-import block from "../../../assets/icons/footer/block.svg";
-import fb from "../../../assets/icons/footer/fb.svg";
+import image from "../../assets/images/footerLogo.png";
+import wifi from "../../assets/icons/footer/wifilogo.svg";
+import twitter from "../../assets/icons/footer/twitter.svg";
+import block from "../../assets/icons/footer/block.svg";
+import fb from "../../assets/icons/footer/fb.svg";
 
 const Footer = () => {
   return (
