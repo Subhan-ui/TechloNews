@@ -9,13 +9,13 @@ import { ModalProps } from "../../types/modalTypes";
 const Backdrop: React.FC<{ hiding: () => void }> = (props) => {
   return (
     <div
-      className="fixed top-0 left-0 w-full h-[100vh] z-[200] bg-[#000000bf]"
+      className="fixed top-0 left-0 w-full h-[100vh] z-[200] bg-lightblack"
       onClick={props.hiding}
     />
   );
 };
 const OnlyModal: React.FC<ModalProps> = (props) => {
-  const time = timeAgo(props.published_date);
+  const time = timeAgo(props?.published_date);
   return (
     <>
       <div className="md:block hidden fixed z-[250]  top-24 left-1/2 transform -translate-x-1/2 p-6 pt-0 rounded-lg w-[95vw] \ h-[596px] 4xl:w-[1462px] bg-white">
@@ -31,12 +31,12 @@ const OnlyModal: React.FC<ModalProps> = (props) => {
           marginTop="40px"
           width="750px"
           widths="540px"
-          title={props.title}
-          id={props.id}
-          abstract={props.abstract}
-          byline={props.byline}
-          published_date={props.published_date}
-          multimedia={props.multimedia}
+          title={props?.title}
+          id={props?.id}
+          abstract={props?.abstract}
+          byline={props?.byline}
+          published_date={props?.published_date}
+          multimedia={props?.multimedia}
         />
       </div>
 
@@ -51,17 +51,17 @@ const OnlyModal: React.FC<ModalProps> = (props) => {
         </div>
         <div className="mt-2 relative ">
           <img
-            src={props.multimedia}
+            src={props?.multimedia}
             className="h-[347px] text-center"
             alt="image of your card"
           />
           <p className="text-red font-bold mt-4">Trending</p>
-          <h1 className="text-2xl font-semibold font-serif">{props.title}</h1>
-          <p className="text-gray text-sm">{props.abstract}</p>
+          <h1 className="text-2xl font-semibold font-serif">{props?.title}</h1>
+          <p className="text-gray text-sm">{props?.abstract}</p>
           <div className="absolute -bottom-[194px] w-full">
             <p className="text-sm text-center ">{time}</p>
             <p className="pt-2 text-center text-sm text-gray opacity-70">
-              {props.byline}
+              {props?.byline}
             </p>
           </div>
         </div>

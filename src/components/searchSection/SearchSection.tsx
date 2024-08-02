@@ -1,19 +1,8 @@
-import { useState } from "react";
-import { NYTResponse } from "../../types/cardData";
-
-import { useSelector } from "react-redux";
-import { RootState } from "../../store/store";
 import Cards from "../searchCardSection/SearchCards";
+import useSearch from "../../hooks/useSearch";
 
 const SearchSection: React.FC<{ children: React.ReactNode }> = (props) => {
-  const data = useSelector(
-    (state: RootState) => state.feed.queryData as NYTResponse
-  );
-
-  const [small, setSmall] = useState(true);
-  const handleViewMore = () => {
-    setSmall((prev) => !prev);
-  };
+  const { small, handleViewMore, data } = useSearch();
 
   return (
     data.length > 0 && (

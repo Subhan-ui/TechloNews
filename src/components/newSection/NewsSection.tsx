@@ -1,20 +1,9 @@
-import { useState } from "react";
-import { NYTResponse } from "../../types/cardData";
-
 import PickCards from "../pickCards/PickCards";
 import Cards from "../cards/Cards";
-import { useSelector } from "react-redux";
-import { RootState } from "../../store/store";
+import useNewsHandle from "../../hooks/useNewsHandle";
 
 const NewsSection: React.FC<{ children: React.ReactNode }> = (props) => {
-  const data = useSelector(
-    (state: RootState) => state.feed.data as NYTResponse
-  );
-
-  const [small, setSmall] = useState(true);
-  const handleViewMore = () => {
-    setSmall((prev) => !prev);
-  };
+  const { small, handleViewMore, data } = useNewsHandle();
 
   return (
     <div className="md:mt-8 mt-0 overflow-x-hidden ">

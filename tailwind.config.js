@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 
-import { red, gray } from "./src/constant/colors";
+import { red, gray, lightblack, blue, lightGray } from "./src/constant/colors";
 
 export default {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
@@ -34,6 +34,9 @@ export default {
       colors: {
         red: red,
         gray: gray,
+        lightblack:lightblack,
+        blue:blue,
+        lightGray:lightGray,
       },
       screens: {
         "3xl": "1365px",

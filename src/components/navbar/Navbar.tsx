@@ -4,10 +4,10 @@ import person from "../../../assets/icons/person.svg";
 import bar from "../../../assets/icons/bar.svg";
 import search from "../../../assets/icons/search.svg";
 import { useSelector } from "react-redux";
-import { RootState } from "../../../store/store";
+import { RootState } from "../../store/store";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { feedActions } from "../../../store/slices/feedSlice";
+import { feedActions } from "../../store/slices/feedSlice";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
@@ -27,13 +27,13 @@ const Navbar = () => {
           <img src={img} alt="Navbar-Image" className=" w-[62px] h-[52px]" />
         </Link>
         <ul className="justify-around font-nunito w-[893px] items-center xl:flex hidden">
-          {sections.slice(0, 7)?.map((section) => (
+          {sections?.slice(0, 7)?.map((section) => (
             <li
               className="flex cursor-pointer text-base font-semibold text-gray"
               onClick={() => handleNavigation(section.display_name)}
               key={section.section}
             >
-              {section.display_name}
+              {section?.display_name}
             </li>
           ))}
           <li
@@ -60,13 +60,13 @@ const Navbar = () => {
       {show && (
         <div className="absolute md:w-[50vw] w-[100vw] pt-7 ">
           <ul className="bg-white flex flex-wrap rounded-2xl gap-5 relative font-plex md:left-[40vw] p-8 z-50">
-            {sections.slice(7, sections.length + 1)?.map((section) => (
+            {sections?.slice(7, sections.length + 1)?.map((section) => (
               <li
                 className="flex cursor-pointer"
                 key={section.section}
-                onClick={() => handleNavigation(section.display_name)}
+                onClick={() => handleNavigation(section?.display_name)}
               >
-                {section.display_name}
+                {section?.display_name}
               </li>
             ))}
           </ul>

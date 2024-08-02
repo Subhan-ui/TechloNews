@@ -2,19 +2,10 @@ import Reaction from "../reaction/Reaction";
 import Time from "../time/Time";
 import image from "../../assets/images/image.png";
 import timeAgo from "../../hooks/convertTime";
+import { allDetailType } from "../../types/allDetailType";
 
-const AllDetails: React.FC<{
-  width: string;
-  widths: string;
-  id: string;
-  title: string;
-  abstract: string;
-  byline: string;
-  published_date: string;
-  multimedia: string;
-  marginTop: string;
-}> = (props) => {
-  const time = timeAgo(props.published_date);
+const AllDetails: React.FC<allDetailType> = (props) => {
+  const time = timeAgo(props?.published_date);
   return (
     <>
       <div
@@ -22,7 +13,7 @@ const AllDetails: React.FC<{
         style={{ marginTop: props.marginTop }}
       >
         <img
-          src={props.multimedia || image}
+          src={props?.multimedia || image}
           alt="Hero"
           className={`3xl:w-[750px] 3xl:h-[500px] xl:w-[650px] xl:h-[450px] lg:w-[500px] lg:h-[400px]`}
         />
@@ -33,19 +24,19 @@ const AllDetails: React.FC<{
           </div>
           <div>
             <h4 className="font-bold 3xl:text-3xl xl:text-2xl md:text-xl  text-left font-plex text-gray">
-              {props.title}
+              {props?.title}
             </h4>
             <p className="xl:text-[15px] text-xs text-gray leading-6 font-poppins">
-              {props.abstract}
+              {props?.abstract}
             </p>
           </div>
-          <Time time={time} writer={props.byline} />
+          <Time time={time} writer={props?.byline} />
         </div>
       </div>
       <div className="relative inline-block h-[456px] mt-20 overflow-hidden place-items-center md:hidden mb-0 ">
         <img src={image} alt="Sample" className="block h-[456px] w-full " />
         <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent h-32 p-5 flex items-end">
-          <p className="text-white font-bold text-2xl">{props.title}</p>
+          <p className="text-white font-bold text-2xl">{props?.title}</p>
         </div>
       </div>
     </>

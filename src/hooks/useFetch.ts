@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
-import { categoryURL, sectionsURL } from "../constant/links";
+import { sectionsURL, categoryURL } from "../constant/links";
 import { useSelector } from "react-redux";
 import { RootState } from "../store/store";
-import { NYTResponse } from "../types/cardData";
+import { CardData, NYTResponse } from "../types/cardData";
 import { feedActions } from "../store/slices/feedSlice";
+
 
 const useFetch = () => {
   const [loading, setLoading] = useState(true);
@@ -21,23 +22,31 @@ const useFetch = () => {
       const url = sectionsURL(category);
       fetchData(url, feedActions.settingData);
     }
-    
-    fetchData(categoryURL, feedActions.settingSection);
-  }, [category,  ]);
 
-  useEffect(()=>{
+    fetchData(categoryURL, feedActions.settingSection);
+  }, [category]);
+
+  useEffect(() => {
     if (data && data.length > 0) {
       setLoading(false);
     }
-  },[data])
-  const fetchData = async (url: string, action: any) => {
+  }, [data]);
+  const fetchData = async (url: string | undefined, action: any) => {
     setLoadingData(true);
-    const response = await fetch(url);
-    const res = await response.json();
-    dispatch(action(res.results));
-    setLoadingData(false)
+    if (url) {
+      const response = await fetch(url);
+      const res = await response.json();
+      dispatch(action(res.results));
+      setLoadingData(false);
+    }
   };
-  return { loading, loadingData };
+  const card = useSelector(
+    (state: RootState) => state.feed.selectedCard
+  ) as CardData;
+  const handleRemove =()=>{
+    dispatch(feedActions.handleRemovalCard())
+  }
+  return { loading, loadingData,card, handleRemove};
 };
 
 export default useFetch;

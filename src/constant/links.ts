@@ -1,10 +1,9 @@
 export const searchURL = (search: string | null) => {
-  return `https://api.nytimes.com/svc/search/v2/articlesearch.json?begin_date=20120101&end_date=20231231&q=${search}&api-key=HMJwQch2Zmw48r1NWGfBR9zoG9YAuHeT`;
+  return `${import.meta.env.VITE_APP_SEARCH_URL}${search}&api-key=${import.meta.env.VITE_APP_API_KEY}`;
 };
 
-export const categoryURL: string =
-  "https://api.nytimes.com/svc/news/v3/content/section-list.json?api-key=HMJwQch2Zmw48r1NWGfBR9zoG9YAuHeT";
+export const categoryURL:string = import.meta.env.VITE_APP_CATEGORY_URL
 
 export const sectionsURL = (category: string) => {
-  return `https://api.nytimes.com/svc/news/v3/content/all/${category}.json?limit=20&api-key=HMJwQch2Zmw48r1NWGfBR9zoG9YAuHeT`;
+  return `${import.meta.env.VITE_APP_SECTION_URL}${category}.json?limit=20&api-key=${import.meta.env.VITE_APP_API_KEY}`;
 };

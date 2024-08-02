@@ -6,11 +6,11 @@ import fb from "../../../assets/icons/footer/fb.svg";
 
 const Footer = () => {
   return (
-    <div className="bg-[#0E1E32] text-[#FFFFFF]">
+    <div className="bg-blue text-white">
       <div className=" h-[250px] md:flex 3xl:w-[1366px] xl:w-[100vw] mx-auto hidden justify-around items-center">
         <div className="flex flex-col items-center justify-center gap-10">
           <img src={image} alt="logo" className="w-[66px] h-[40px]" />
-          <p className="text-[#ffffff] font-poppins text-xs">
+          <p className="text-white font-poppins text-xs">
             copyright © 2020 | NBC NEWS
           </p>
         </div>

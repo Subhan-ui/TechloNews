@@ -1,14 +1,12 @@
-import { useDispatch } from "react-redux";
 import search from "../../assets/icons/search.svg";
-import { feedActions } from "../../store/slices/feedSlice";
 
 import SearchSection from "../../components/searchSection/SearchSection";
 import useQuery from "../../hooks/useQuery";
 import Loader from "../../components/Loader/Loader";
 
 const Search = () => {
-  const dispatch = useDispatch();
-  const { isLoading, handleSubmit, searchText, loading } = useQuery();
+  const { isLoading, handleSubmit, searchText, loading, empty, handleChange } =
+    useQuery();
 
   return (
     <>
@@ -25,20 +23,21 @@ const Search = () => {
           </button>
           <input
             value={searchText}
-            onChange={(e) => dispatch(feedActions.handleSearch(e.target.value))}
+            onChange={handleChange}
             type="text"
             className="md:w-[800px] w-full h-[54px] md:pl-16 pl-10"
             placeholder="Gaza"
           />
         </form>
+        {empty && (
+          <p className="text-red absolute">You need to Add some text here</p>
+        )}
       </div>
       {isLoading &&
         (loading ? (
-          <SearchSection>
-            <div className="w-full flex justify-center items-center">
-              <Loader />
-            </div>
-          </SearchSection>
+          <div className="w-full flex justify-center items-center">
+            <Loader />
+          </div>
         ) : (
           <SearchSection>
             <h4 className="py-2 pl-4 font-semibold font-poppins text-lg bg-white">

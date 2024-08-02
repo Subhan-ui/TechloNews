@@ -9,7 +9,7 @@ function App() {
   return (
     <Router>
       <Layout>
-        <div className="bg-[#F1F2F3] overflow-y-hidden">
+        <div className="bg-lightGray overflow-y-hidden">
           <div className="relative 3xl:w-[1366px] w-full mx-auto overflow-x-hidden">
             <Routes>
               <Route path="/" element={<Hero />} />

@@ -1,4 +1,6 @@
-const Time: React.FC<{ time: string; writer: string }> = (props) => {
+import { timeType } from "../../types/timesType";
+
+const Time: React.FC<timeType> = (props) => {
   return (
     <div>
       <p className="text-[13px] text-gray mt-9 font-poppins">
