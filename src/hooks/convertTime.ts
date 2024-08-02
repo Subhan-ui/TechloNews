@@ -5,7 +5,6 @@ const getTimeUnit = (
   diffDays: number,
   diffWeeks: number,
   diffMonths: number,
-  diffYears: number
 ): string => {
   if (diffSeconds < 60) return "seconds";
   if (diffMinutes < 60) return "minutes";
@@ -36,7 +35,6 @@ const timeAgo = (timestamp: string): string => {
     diffDays,
     diffWeeks,
     diffMonths,
-    diffYears
   );
 
   switch (unit) {

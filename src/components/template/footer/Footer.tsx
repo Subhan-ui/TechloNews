@@ -1,7 +1,7 @@
 import image from "../../../assets/images/footerLogo.png";
 import wifi from "../../../assets/icons/footer/wifilogo.svg";
 import twitter from "../../../assets/icons/footer/twitter.svg";
-import somelogo from "../../../assets/icons/footer/somelogo.svg";
+import block from "../../../assets/icons/footer/block.svg";
 import fb from "../../../assets/icons/footer/fb.svg";
 
 const Footer = () => {
@@ -10,7 +10,9 @@ const Footer = () => {
       <div className=" h-[250px] md:flex 3xl:w-[1366px] xl:w-[100vw] mx-auto hidden justify-around items-center">
         <div className="flex flex-col items-center justify-center gap-10">
           <img src={image} alt="logo" className="w-[66px] h-[40px]" />
-          <p className="text-[#ffffff] font-poppins text-xs">copyright © 2020 | NBC NEWS</p>
+          <p className="text-[#ffffff] font-poppins text-xs">
+            copyright © 2020 | NBC NEWS
+          </p>
         </div>
         <ul className="font-poppins font-medium text-sm">
           <li>Privacy Policy</li>
@@ -33,7 +35,7 @@ const Footer = () => {
               <img src={twitter} alt="" />
             </li>
             <li>
-              <img src={somelogo} alt="" />
+              <img src={block} alt="" />
             </li>
             <li>
               <img src={fb} alt="" />
@@ -60,7 +62,7 @@ const Footer = () => {
             <img src={twitter} alt="" />
           </li>
           <li>
-            <img src={somelogo} alt="" />
+            <img src={block} alt="" />
           </li>
           <li>
             <img src={fb} alt="" />

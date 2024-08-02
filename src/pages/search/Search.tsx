@@ -4,10 +4,11 @@ import { feedActions } from "../../store/slices/feedSlice";
 
 import SearchSection from "../../components/searchSection/SearchSection";
 import useQuery from "../../hooks/useQuery";
+import Loader from "../../components/Loader/Loader";
 
 const Search = () => {
   const dispatch = useDispatch();
-  const { isLoading, handleSubmit, searchText } = useQuery();
+  const { isLoading, handleSubmit, searchText, loading } = useQuery();
 
   return (
     <>
@@ -31,13 +32,20 @@ const Search = () => {
           />
         </form>
       </div>
-      {isLoading && (
-        <SearchSection>
-          <h4 className="py-2 pl-4 font-semibold font-poppins text-lg bg-white">
-            Search Results
-          </h4>
-        </SearchSection>
-      )}
+      {isLoading &&
+        (loading ? (
+          <SearchSection>
+            <div className="w-full flex justify-center items-center">
+              <Loader />
+            </div>
+          </SearchSection>
+        ) : (
+          <SearchSection>
+            <h4 className="py-2 pl-4 font-semibold font-poppins text-lg bg-white">
+              Search Results
+            </h4>
+          </SearchSection>
+        ))}
     </>
   );
 };

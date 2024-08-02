@@ -18,7 +18,7 @@ const OnlyModal: React.FC<ModalProps> = (props) => {
   const time = timeAgo(props.published_date);
   return (
     <>
-      <div className="md:block hidden fixed z-[250]  top-24 left-1/2 transform -translate-x-1/2 p-6 pt-0 rounded-lg w-[1462px] bg-white">
+      <div className="md:block hidden fixed z-[250]  top-24 left-1/2 transform -translate-x-1/2 p-6 pt-0 rounded-lg w-[95vw] \ h-[596px] 4xl:w-[1462px] bg-white">
         <div className="flex justify-end pt-3 absolute right-3">
           <img
             src={cross}

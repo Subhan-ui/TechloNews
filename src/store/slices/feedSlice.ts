@@ -52,7 +52,8 @@ const feedSlice = createSlice({
       state.query = action.payload;
     },
     handleQueryData(state, action: PayloadAction<NYTResponse>) {
-      state.queryData = action.payload;
+      const data = action.payload.filter((dat) => dat.abstract.length > 0);
+      state.queryData = data;
     },
   },
 });

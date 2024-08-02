@@ -11,6 +11,7 @@ const useQuery = () => {
   const dispatch = useDispatch();
   const [searchParams] = useSearchParams();
   const [isLoading, setIsLoading] = useState(false);
+  const [loading, setLoading] = useState(false);
   const searchText = useSelector((state: RootState) => state.feed.query);
   const navigate = useNavigate();
 
@@ -24,12 +25,12 @@ const useQuery = () => {
   }, [searchParams]);
   const handleFetching = () => {
     setIsLoading(false);
-
     fetch(url)
-      .then((response) => response.json())
-      .then((res) => {
+    .then((response) => response.json())
+    .then((res) => {
+        setLoading(true);
         let data = res.response.docs;
-        let data1: NYTResponse = data.map((dat: NYTSearch) => ({
+        let data1: NYTResponse = data?.map((dat: NYTSearch) => ({
           id: dat.snippet,
           title: dat.abstract,
           abstract: dat.lead_paragraph,
@@ -38,8 +39,8 @@ const useQuery = () => {
           multimedia: dat.multimedia,
         }));
         dispatch(feedActions.handleQueryData(data1));
-      })
-
+        setLoading(false);
+      });
     setIsLoading(true);
   };
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
@@ -47,7 +48,7 @@ const useQuery = () => {
     navigate(`/search?q=${searchText.split(" ").join("%20")}`);
     handleFetching();
   };
-  return { handleSubmit, isLoading, searchText };
+  return { handleSubmit, isLoading, searchText, loading };
 };
 
 export default useQuery;

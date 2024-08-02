@@ -18,24 +18,24 @@ const useFetch = () => {
   );
   useEffect(() => {
     if (category) {
-      setLoadingData(true);
       const url = sectionsURL(category);
       fetchData(url, feedActions.settingData);
-      setLoadingData(false);
     }
-
+    
     fetchData(categoryURL, feedActions.settingSection);
+  }, [category,  ]);
 
+  useEffect(()=>{
     if (data && data.length > 0) {
       setLoading(false);
     }
-    setLoadingData(false)
-  }, [category ]);
-
+  },[data])
   const fetchData = async (url: string, action: any) => {
+    setLoadingData(true);
     const response = await fetch(url);
     const res = await response.json();
     dispatch(action(res.results));
+    setLoadingData(false)
   };
   return { loading, loadingData };
 };

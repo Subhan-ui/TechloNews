@@ -32,10 +32,10 @@ const AllDetails: React.FC<{
             <Reaction className="" />
           </div>
           <div>
-            <h4 className="font-bold text-3xl text-left font-plex text-gray">
+            <h4 className="font-bold 3xl:text-3xl xl:text-2xl md:text-xl  text-left font-plex text-gray">
               {props.title}
             </h4>
-            <p className="text-[15px] text-gray leading-6 font-poppins">
+            <p className="xl:text-[15px] text-xs text-gray leading-6 font-poppins">
               {props.abstract}
             </p>
           </div>

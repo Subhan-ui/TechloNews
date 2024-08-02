@@ -9,7 +9,7 @@ const PickCards: React.FC<{ data: NYTResponse }> = (props) => {
       <h2 className=" font-semibold font-poppins ml-5 text-lg mb-[22px]">Editors Picks ⭐</h2>
       <div className="md:flex hidden gap-5 justify-between mb-8 overflow-x-auto overflow-y-hidden ">
         {props.data &&
-          props.data.map((arr) => (
+          props.data?.map((arr) => (
             <PickCard
               key={arr.title}
               image={arr?.multimedia[1]?.url || image}

@@ -37,7 +37,13 @@ const Layout: React.FC<{ children: React.ReactNode }> = (props) => {
         />
       )}
       <Navbar />
-      {loadingData ? <div className="w-full h-[100vh] flex justify-center items-center"><Loader /></div> : props.children}
+      {loadingData ? (
+        <div className="w-full h-[100vh] flex justify-center items-center">
+          <Loader />
+        </div>
+      ) : (
+        props.children
+      )}
       <Footer />
     </>
   );

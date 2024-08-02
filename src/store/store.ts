@@ -5,7 +5,6 @@ const store = configureStore({
   reducer: {
     feed: feedReducer,
   },
-  middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat([]),
 });
 
 export default store;
