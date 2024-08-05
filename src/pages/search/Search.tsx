@@ -2,7 +2,7 @@ import search from "../../assets/icons/search.svg";
 
 import SearchSection from "../../components/searchSection/SearchSection";
 import useQuery from "../../hooks/useQuery";
-import Loader from "../../components/Loader/Loader";
+import Loader from "../../components/loader/Loader";
 
 const Search = () => {
   const { isLoading, handleSubmit, searchText, loading, empty, handleChange } =

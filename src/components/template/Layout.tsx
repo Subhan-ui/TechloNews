@@ -1,7 +1,7 @@
 import Footer from "../footer/Footer";
 import Navbar from "../navbar/Navbar";
 import Modal from "../modal/Modal";
-import Loader from "../Loader/Loader";
+import Loader from "../loader/Loader";
 import useFetch from "../../hooks/useFetch";
 
 const Layout: React.FC<{ children: React.ReactNode }> = (props) => {
