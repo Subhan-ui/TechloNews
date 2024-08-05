@@ -1,1 +1,0 @@
-export type timeType = { time: string; writer: string }

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { NYTResponse } from "../types/cardData";
+import { NYTResponse } from "../types/types";
 
 import { useSelector } from "react-redux";
 import { RootState } from "../store/store";

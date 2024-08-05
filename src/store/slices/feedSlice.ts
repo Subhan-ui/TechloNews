@@ -1,6 +1,5 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
-import { CardData, NYTResponse } from "../../types/cardData";
-import { reduxStates, section } from "../../types/reduxStates";
+import { reduxStates, section, CardData, NYTResponse } from "../../types/types";
 
 const initialState: reduxStates = {
   data: [],

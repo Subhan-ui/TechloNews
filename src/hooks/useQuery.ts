@@ -3,7 +3,7 @@ import { searchURL } from "../constant/links";
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { feedActions } from "../store/slices/feedSlice";
-import { NYTResponse, NYTSearch } from "../types/cardData";
+import { NYTResponse, NYTSearch } from "../types/types";
 import { useSelector } from "react-redux";
 import { RootState } from "../store/store";
 

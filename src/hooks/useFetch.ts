@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 import { sectionsURL, categoryURL } from "../constant/links";
 import { useSelector } from "react-redux";
 import { RootState } from "../store/store";
-import { CardData, NYTResponse } from "../types/cardData";
+import { CardData, NYTResponse } from "../types/types";
 import { feedActions } from "../store/slices/feedSlice";
 
 

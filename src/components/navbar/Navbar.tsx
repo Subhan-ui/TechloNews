@@ -9,6 +9,7 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { feedActions } from "../../store/slices/feedSlice";
 import { Link } from "react-router-dom";
+import { sections } from "../../types/types";
 
 const Navbar = () => {
   const sections = useSelector((state: RootState) => state.feed.section);
@@ -27,7 +28,7 @@ const Navbar = () => {
           <img src={img} alt="Navbar-Image" className=" w-[62px] h-[52px]" />
         </Link>
         <ul className="justify-around font-nunito w-[893px] items-center xl:flex hidden">
-          {sections?.slice(0, 7)?.map((section) => (
+          {sections?.slice(0, 7)?.map((section:sections) => (
             <li
               className="flex cursor-pointer text-base font-semibold text-gray"
               onClick={() => handleNavigation(section.display_name)}
@@ -60,7 +61,7 @@ const Navbar = () => {
       {show && (
         <div className="absolute md:w-[50vw] w-[100vw] pt-7 ">
           <ul className="bg-white flex flex-wrap rounded-2xl gap-5 relative font-plex md:left-[40vw] p-8 z-50">
-            {sections?.slice(7, sections.length + 1)?.map((section) => (
+            {sections?.slice(7, sections.length + 1)?.map((section:sections) => (
               <li
                 className="flex cursor-pointer"
                 key={section.section}

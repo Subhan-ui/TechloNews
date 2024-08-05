@@ -1,4 +1,4 @@
-import { timeType } from "../../types/timesType";
+import { timeType } from "../../types/types";
 
 const Time: React.FC<timeType> = (props) => {
   return (

@@ -3,7 +3,7 @@ import cross from "../../assets/icons/cross.svg";
 import ReactDOM from "react-dom";
 import AllDetails from "../detail/AllDetails";
 import timeAgo from "../../hooks/convertTime";
-import { ModalProps } from "../../types/modalTypes";
+import { ModalProps } from "../../types/types";
 
 
 const Backdrop: React.FC<{ hiding: () => void }> = (props) => {

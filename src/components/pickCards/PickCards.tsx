@@ -1,4 +1,4 @@
-import { NYTResponse } from "../../types/cardData";
+import { NYTResponse } from "../../types/types";
 import PickCard from "../pickCard/PickCard";
 import image from "../../assets/images/image.png";
 

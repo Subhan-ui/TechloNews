@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
 import { RootState } from "../store/store";
-import { NYTResponse } from "../types/cardData";
+import { NYTResponse } from "../types/types";
 import { useState } from "react";
 
 const useNewsHandle = () => {

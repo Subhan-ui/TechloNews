@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
 import { RootState } from "../store/store";
-import { NYTResponse, NYTResponseItem } from "../types/cardData";
+import { NYTResponse, NYTResponseItem } from "../types/types";
 import { useEffect, useState } from "react";
 
 const useSelectFirst = () => {

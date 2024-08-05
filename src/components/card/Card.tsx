@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux";
-import { CardData } from "../../types/cardData";
+import { CardData } from "../../types/types";
 import { feedActions } from "../../store/slices/feedSlice";
 import Time from "../time/Time";
 import Reaction from "../reaction/Reaction";

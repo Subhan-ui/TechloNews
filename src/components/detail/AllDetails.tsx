@@ -2,7 +2,7 @@ import Reaction from "../reaction/Reaction";
 import Time from "../time/Time";
 import image from "../../assets/images/image.png";
 import timeAgo from "../../hooks/convertTime";
-import { allDetailType } from "../../types/allDetailType";
+import { allDetailType } from "../../types/types";
 
 const AllDetails: React.FC<allDetailType> = (props) => {
   const time = timeAgo(props?.published_date);

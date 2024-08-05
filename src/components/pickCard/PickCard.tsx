@@ -1,5 +1,5 @@
 import truncateString from "../../hooks/useTrucate";
-import { pickCardType } from "../../types/pickCardType";
+import { pickCardType } from "../../types/types";
 
 const PickCard: React.FC<pickCardType> = (props) => {
   return (
