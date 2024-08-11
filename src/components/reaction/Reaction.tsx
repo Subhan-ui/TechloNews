@@ -8,10 +8,10 @@ const Reaction: React.FC<{ className: string }> = (props) => {
       <ul
         className={`flex gap-6  justify-center items-center ${props.className}`}
       >
-        <li className="flex gap-1.5 text-[10px]  justify-center font-poppins">
+        <li className="flex gap-1.5 text-[10px]  justify-center items-center  font-poppins">
           <img src={heart} alt="" className="w-[18px] h-[16px]" /> 234
         </li>
-        <li className="flex gap-1.5 text-[10px] justify-center font-poppins">
+        <li className="flex gap-1.5 text-[10px] justify-center items-center font-poppins">
           <img src={archived} alt="" className="w-[13px] h-[16px]" />
           345
         </li>

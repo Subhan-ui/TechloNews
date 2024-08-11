@@ -39,8 +39,9 @@ export default {
         lightGray:lightGray,
       },
       screens: {
-        "3xl": "1365px",
-        '4xl': '1462px',
+        "3xl": "1375px",
+        '4xl': '1432px',
+        'md':'843px'
       },
     },
   },

@@ -14,20 +14,20 @@ const Footer = () => {
             copyright © 2020 | NBC NEWS
           </p>
         </div>
-        <ul className="font-poppins font-medium text-sm">
+        <ul className="font-poppins leading-8 font-medium text-sm">
           <li>Privacy Policy</li>
           <li>Do not sell my personal info</li>
           <li>Terms of Services</li>
           <li>nbcnews.com Site Map</li>
         </ul>
-        <div className="flex flex-col gap-7">
+        <div className="flex flex-col gap-8">
           <ul className="flex gap-10 font-poppins font-medium text-sm">
             <li>About</li>
             <li>Contact</li>
             <li>Career</li>
             <li>Coupons</li>
           </ul>
-          <ul className="flex gap-10">
+          <ul className="flex items-center justify-end gap-11">
             <li>
               <img src={wifi} alt="" />
             </li>
@@ -44,7 +44,7 @@ const Footer = () => {
         </div>
       </div>
       <div className="md:hidden block pb-4 font-poppins">
-        <div className="items-center flex flex-col gap-2 py-6">
+        <div className="items-center flex flex-col gap-2 pb-4 pt-[20px]">
           <img src={image} alt="logo" className="h-[40px] block mx-auto " />
           <p className="text-slate-400">copyright © 2020 | NBC NEWS</p>
         </div>

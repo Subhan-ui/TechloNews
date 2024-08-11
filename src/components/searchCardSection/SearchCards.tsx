@@ -5,7 +5,7 @@ import { NYTResponse } from "../../types/types";
 const Cards: React.FC<{ data: NYTResponse }> = (props) => {
   return (
     <>
-      <div className="mt-2 flex justify-center gap-5 md:mx-0 mx-2 flex-wrap px-[1px]">
+      <div className="mt-2 flex justify-center 4xl:gap-0 4xl:justify-between gap-5 md:mx-0 mx-2 flex-wrap">
         {props?.data?.map((arr) => {
           const imageUrl = arr?.multimedia?.[2]?.url
             ? `https://www.nytimes.com/${arr?.multimedia[2]?.url}`

@@ -6,10 +6,10 @@ const PickCards: React.FC<{ data: NYTResponse }> = (props) => {
   const arrs = props?.data && props?.data[0];
   return (
     <div className="w-full ">
-      <h2 className=" font-semibold font-poppins ml-5 text-lg mb-[22px]">
+      <h2 className=" font-semibold font-poppins text-lg mb-[22px]">
         Editors Picks ⭐
       </h2>
-      <div className="md:flex hidden gap-5 justify-between mb-8 overflow-x-auto overflow-y-hidden ">
+      <div className="md:flex hidden gap-5 justify-between overflow-x-auto overflow-y-hidden ">
         {props?.data &&
           props?.data?.map((arr) => (
             <PickCard

@@ -17,7 +17,7 @@ const Card: React.FC<CardData> = (props) => {
   return (
     <>
       <div
-        className="w-[438px] h-[520px] bg-white relative"
+        className="md:w-[437px] w-[344px] h-[479px] md:h-[520px] bg-white relative"
         onClick={handleSelection}
       >
         <img
@@ -35,9 +35,9 @@ const Card: React.FC<CardData> = (props) => {
           <span className="relative left-5 ">
             <Time time={time} writer={truncateString(props?.writer,5)} />
           </span>
-          <hr className="mt-5" />
+          <hr className="md:mt-5 mt-3" />
           <div className="h-12 flex justify-center items-center">
-            <Reaction className="h-10 gap-8" />
+            <Reaction className="h-10 gap-[30px]" />
           </div>
         </div>
       </div>

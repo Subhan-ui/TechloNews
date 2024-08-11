@@ -18,7 +18,7 @@ const OnlyModal: React.FC<ModalProps> = (props) => {
   const time = timeAgo(props?.published_date);
   return (
     <>
-      <div className="md:block hidden fixed z-[250]  top-24 left-1/2 transform -translate-x-1/2 p-6 pt-0 rounded-lg w-[95vw] \ h-[596px] 4xl:w-[1462px] bg-white">
+      <div className="md:block hidden fixed z-[250]  4xl:top-36 top-24 left-1/2 transform -translate-x-1/2 p-6 pt-0 rounded-lg w-[95vw]  h-[596px] 4xl:w-[1462px] bg-white">
         <div className="flex justify-end pt-3 absolute right-3">
           <img
             src={cross}
@@ -40,19 +40,19 @@ const OnlyModal: React.FC<ModalProps> = (props) => {
         />
       </div>
 
-      <div className="block md:hidden fixed overflow-y-scroll h-[85vh] pb-4 z-[250] top-[104px] w-[92vw]  left-1/2 transform -translate-x-1/2 p-6 pt-0 rounded-lg  bg-white">
+      <div className="block md:hidden fixed overflow-y-scroll h-[80vh] pb-4 mb-4 z-[250] top-[104px] w-[92vw]  left-1/2 transform -translate-x-1/2 p-6 pt-0 rounded-lg  bg-white">
         <div className="flex justify-end relative left-3">
           <img
             src={cross}
             alt="cross"
-            className="block h-[11.3px] w-[11.3px] my-2 cursor-pointer"
+            className="block  h-[11.3px] w-[11.3px] my-2 cursor-pointer"
             onClick={props.hiding}
           />
         </div>
         <div className="mt-2 relative ">
           <img
             src={props?.multimedia}
-            className="h-[347px] text-center"
+            className="h-[347px] w-full flex justify-center items-center text-center"
             alt="image of your card"
           />
           <p className="text-red font-bold mt-4">Trending</p>

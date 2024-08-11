@@ -1,8 +1,8 @@
 const ErrorAlert = () => {
   return (
     <>
-      <div className="md:h-[80px] h-[181px] relative bottom-2 bg-red mt-0 md:mt-10 md:flex-nowrap flex flex-wrap justify-center items-center gap-3 md:gap-16">
-        <button className="bg-white text-base font-normal font-poppins text-red md:px-6 md:py-3 px-14 md:mt-0 mt-6 py-4">
+      <div className="md:h-[80px] h-[181px] relative bottom-2 bg-red mt-0 md:mt-[50px] md:flex-nowrap flex flex-wrap justify-center items-center gap-3 md:gap-16">
+        <button className="bg-white text-base font-normal font-poppins text-red md:px-5 md:py-4 px-14 md:mt-0 mt-6 py-3">
           Breaking News
         </button>
         <p className="text-white font-poppins md:mx-0 mx-10 text-xl text-center md:mb-0 mb-7 ">

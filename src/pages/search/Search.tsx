@@ -10,12 +10,12 @@ const Search = () => {
 
   return (
     <>
-      <div className="w-full h-[80vh] flex gap-8 flex-col justify-center items-center">
-        <h1 className="md:text-5xl text-5xl font-semibold font-plex">
+      <div className="w-full h-[89vh] flex gap-16 flex-col justify-center items-center">
+        <h1 className="md:text-5xl text-3xl font-semibold font-plex">
           Search News
         </h1>
         <form
-          className="flex w-full justify-center md:static relative right-3 "
+          className="flex w-full justify-center md:static relative right-3 mx-[24px] "
           onSubmit={handleSubmit}
         >
           <button type="submit" className="relative md:left-12 left-8 ">
@@ -25,7 +25,7 @@ const Search = () => {
             value={searchText}
             onChange={handleChange}
             type="text"
-            className="md:w-[800px] w-full h-[54px] md:pl-16 pl-10"
+            className="md:w-[800px] w-full py-4 h-[54px] md:pl-[74px] pl-[50px]"
             placeholder="Gaza"
           />
         </form>
@@ -40,7 +40,7 @@ const Search = () => {
           </div>
         ) : (
           <SearchSection>
-            <h4 className="py-2 pl-4 font-semibold font-poppins text-lg bg-white">
+            <h4 className="flex items-center md:pl-4 pl-6 py-3 md:h-[54px] h-[83px] font-semibold font-poppins text-lg bg-white">
               Search Results
             </h4>
           </SearchSection>

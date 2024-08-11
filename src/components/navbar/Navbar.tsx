@@ -23,11 +23,11 @@ const Navbar = () => {
 
   return (
     <nav className="w-[100vw] bg-white fixed z-[500] ">
-      <div className="3xl:w-[1366px] w-[100vw] mx-auto xl:px-9 px-8 flex  h-[80px] justify-between items-center">
+      <div className="3xl:w-[1366px] w-[100vw] mx-auto xl:px-9 md:px-8 px-6 flex  h-[80px] 3xl:justify-start justify-between items-center">
         <Link to="/">
-          <img src={img} alt="Navbar-Image" className=" w-[62px] h-[52px]" />
+          <img src={img} alt="Navbar-Image" className=" md:w-[62px] md:h-[52px] w-[49px] h-[40px] 3xl:mr-[124px]" />
         </Link>
-        <ul className="justify-around font-nunito w-[893px] items-center xl:flex hidden">
+        <ul className="justify-between mr-[65px] 3xl:w-[932px] font-nunito w-[893px] items-center xl:flex hidden">
           {sections?.slice(0, 7)?.map((section:sections) => (
             <li
               className="flex cursor-pointer text-base font-semibold text-gray"
@@ -45,15 +45,15 @@ const Navbar = () => {
           </li>
         </ul>
 
-        <div className="flex items-center gap-[30px]">
-          <img src={person} alt="" className="h-[24px] w-[24px]" />
-          <Link to="/search" className="h-[24px] w-[24px]">
-            <img src={search} alt="" className="h-[24px] w-[24px]" />
+        <div className="flex items-center 3xl:gap-[40px] md:gap-[30px] gap-[14px]">
+          <img src={person} alt="" className="md:h-[24px] md:w-[24px] h-[19px] w-[19px]" />
+          <Link to="/search" className="md:h-[24px] md:w-[24px] h-[19px] w-[19px]">
+            <img src={search} alt="" className="md:h-[24px] md:w-[24px] h-[19px] w-[19px]" />
           </Link>
           <img
             src={bar}
             alt=""
-            className="h-[24px] w-[24px]"
+            className="md:h-[24px] md:w-[24px] h-[19px] w-[19px]"
             onClick={() => setShow((prev: boolean) => !prev)}
           />
         </div>

@@ -2,8 +2,8 @@ import filter from "../../assets/icons/filterImage.svg";
 
 const Filter = () => {
   return (
-    <div className="bg-white flex justify-between">
-      <ul className="flex font-semibold font-poppins text-[18px] md:gap-10 gap-5 h-[83px] md:h-[54px] items-center pl-5 ">
+    <div className="bg-white flex justify-between mb-6 md:mb-0">
+      <ul className="flex font-semibold font-poppins text-[18px] md:gap-10 gap-4  h-[83px] md:h-[54px] items-center md:pl-4 pl-6 ">
         <li>Latest Stories</li>
         <li>Opinion</li>
         <li>Health</li>
