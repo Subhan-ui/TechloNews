@@ -49,19 +49,19 @@ const OnlyModal: React.FC<ModalProps> = (props) => {
             onClick={props.hiding}
           />
         </div>
-        <div className="mt-2 relative ">
+        <div className="mt-2 relative">
           <img
             src={props?.multimedia}
             className="h-[347px] w-full flex justify-center items-center text-center"
             alt="image of your card"
           />
-          <p className="text-red font-bold mt-4">Trending</p>
-          <h1 className="text-2xl font-semibold font-serif">{props?.title}</h1>
-          <p className="text-gray text-sm">{props?.abstract}</p>
-          <div className="absolute -bottom-[194px] w-full">
+          <p className="text-red font-bold mt-6 mb-2">Trending</p>
+          <h1 className="text-2xl font-semibold font-serif ">{props?.title}</h1>
+          <p className="text-gray text-sm mt-2">{props?.abstract}</p>
+          <div className=" w-full mt-2 mb-[34px]">
             <p className="text-sm text-center ">{time}</p>
             <p className="pt-2 text-center text-sm text-gray opacity-70">
-              {props?.byline}
+              {props?.byline} | {time}
             </p>
           </div>
         </div>
