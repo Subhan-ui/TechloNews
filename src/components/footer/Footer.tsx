@@ -21,24 +21,24 @@ const Footer = () => {
           <li>nbcnews.com Site Map</li>
         </ul>
         <div className="flex flex-col gap-8">
-          <ul className="flex gap-10 font-poppins font-medium text-sm">
+          <ul className="flex justify-between 3xl:w-[387px] w-[315px] font-poppins font-medium text-sm">
             <li>About</li>
             <li>Contact</li>
             <li>Career</li>
             <li>Coupons</li>
           </ul>
-          <ul className="flex items-center justify-end gap-11">
+          <ul className="flex items-center justify-end gap-[51.43px]">
             <li>
-              <img src={wifi} alt="" />
+              <img src={wifi} alt="" className="h-[28px] w-[28px]"/>
             </li>
             <li>
-              <img src={twitter} alt="" />
+              <img src={twitter} alt="" className="h-[24px] w-[29px]"/>
             </li>
             <li>
-              <img src={block} alt="" />
+              <img src={block} alt="" className="h-[24px] w-[27px]"/>
             </li>
             <li>
-              <img src={fb} alt="" />
+              <img src={fb} alt="" className="h-[27px] w-[27px]"/>
             </li>
           </ul>
         </div>

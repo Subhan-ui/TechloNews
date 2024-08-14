@@ -13,7 +13,7 @@ const NewsSection: React.FC<{ children: React.ReactNode }> = (props) => {
       <div className="text-center md:my-[50px] mt-4 mb-6">
         <button
           onClick={handleViewMore}
-          className="font-poppins border-[1px] border-red text-red text-sm px-[63px] py-[22px]"
+          className="font-poppins border-[1px] font-medium border-red text-red text-sm px-[63px] py-[22px]"
         >
           {small ? "VIEW MORE" : "View Less"}
         </button>

@@ -14,7 +14,7 @@ const SearchSection: React.FC<{ children: React.ReactNode }> = (props) => {
         <div className="text-center my-10">
           <button
             onClick={handleViewMore}
-            className=" border-[1px] border-red text-red text-sm px-11 py-4"
+            className=" font-poppins border-[1px] font-medium border-red text-red text-sm px-[63px] py-[22px]"
           >
             {small ? "VIEW MORE" : "View Less"}
           </button>

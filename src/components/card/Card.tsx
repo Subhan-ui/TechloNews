@@ -5,14 +5,14 @@ import Time from "../time/Time";
 import Reaction from "../reaction/Reaction";
 import timeAgo from "../../hooks/convertTime";
 import truncateString from "../../hooks/useTrucate";
-import image from '../../assets/images/image.png'
+import image from "../../assets/images/image.png";
 
 const Card: React.FC<CardData> = (props) => {
   const dispatch = useDispatch();
   const handleSelection = () => {
     dispatch(feedActions.handleCardClick(props));
   };
-  
+
   const time = timeAgo(props?.time);
   return (
     <>
@@ -25,18 +25,18 @@ const Card: React.FC<CardData> = (props) => {
           alt="image of card"
           className="h-[210px] w-full"
         />
-        <h4 className="font-semibold font-plex text-lg mt-2 px-5">
+        <h4 className="font-semibold font-plex text-lg mt-2 md:px-6 px-5">
           {truncateString(props?.title, 14)}
         </h4>
-        <p className="text-sm leading-[22px] font-nunito text-gray px-5">
+        <p className="text-sm leading-[22px] font-nunito text-gray md:px-6 px-5">
           {truncateString(props?.abstract, 24)}
         </p>
         <div className="absolute w-full bottom-0 ">
-          <span className="relative left-5 ">
-            <Time time={time} writer={truncateString(props?.writer,5)} />
+          <span className="relative md:left-8 left-7  ">
+            <Time time={time} writer={truncateString(props?.writer, 3)} />
           </span>
           <hr className="md:mt-5 mt-3" />
-          <div className="h-12 flex justify-center items-center">
+          <div className="md:h-14 h-[52px] flex justify-center items-center">
             <Reaction className="h-10 gap-[30px]" />
           </div>
         </div>
