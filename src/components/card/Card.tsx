@@ -17,7 +17,7 @@ const Card: React.FC<CardData> = (props) => {
   return (
     <>
       <div
-        className="md:w-[437px] w-[344px] h-[479px] md:h-[520px] bg-white relative"
+        className="md:w-[437px] mb-[4px] w-[344px] h-[479px] md:h-[520px] bg-white relative"
         onClick={handleSelection}
       >
         <img
@@ -25,14 +25,14 @@ const Card: React.FC<CardData> = (props) => {
           alt="image of card"
           className="h-[210px] w-full"
         />
-        <h4 className="font-semibold font-plex text-lg mt-2 md:px-6 px-5">
+        <h4 className="font-semibold font-plex text-lg mt-[15px] md:px-[25px] px-5">
           {truncateString(props?.title, 14)}
         </h4>
-        <p className="text-sm leading-[22px] font-nunito text-gray md:px-6 px-5">
-          {truncateString(props?.abstract, 24)}
+        <p className="text-sm leading-[22px] md:mt-[17px] mt-[8px] font-nunito text-gray md:px-6 px-5">
+          {truncateString(props?.abstract, 20)}
         </p>
         <div className="absolute w-full bottom-0 ">
-          <span className="relative md:left-8 left-7  ">
+          <span className="relative md:left-[35px] left-7  ">
             <Time time={time} writer={truncateString(props?.writer, 3)} />
           </span>
           <hr className="md:mt-5 mt-3" />

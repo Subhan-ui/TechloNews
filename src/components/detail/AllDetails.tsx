@@ -36,7 +36,7 @@ const AllDetails: React.FC<allDetailType> = (props) => {
       <div className="relative inline-block h-[456px] mt-20 overflow-hidden place-items-center md:hidden mb-0 ">
         <img src={props?.multimedia || image} alt="Sample" className="block h-[456px] w-screen " />
         <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent h-32 p-5 flex items-end">
-          <p className="text-white font-bold text-2xl">{props?.title}</p>
+          <p className="text-white font-bold text-2xl font-plex">{props?.title}</p>
         </div>
       </div>
     </>

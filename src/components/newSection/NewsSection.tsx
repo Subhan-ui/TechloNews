@@ -10,10 +10,10 @@ const NewsSection: React.FC<{ children: React.ReactNode }> = (props) => {
       {props.children}
       <Cards data={small ? data?.slice(0, 6) : data} />
 
-      <div className="text-center md:my-[50px] mt-4 mb-6">
+      <div className="text-center md:my-[50px] mt-4 mb-[25px]">
         <button
           onClick={handleViewMore}
-          className="font-poppins border-[1px] font-medium border-red text-red text-sm px-[63px] py-[22px]"
+          className="font-poppins border-[1px] font-medium border-red text-red text-sm pr-[63px] pl-[64px] w-[220px] h-[60px]"
         >
           {small ? "VIEW MORE" : "View Less"}
         </button>

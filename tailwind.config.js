@@ -41,6 +41,7 @@ export default {
       screens: {
         "3xl": "1375px",
         '4xl': '1432px',
+        '5xl':'1500',
         'md':'843px'
       },
     },

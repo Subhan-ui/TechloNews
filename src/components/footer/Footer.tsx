@@ -54,7 +54,7 @@ const Footer = () => {
           <li>Career</li>
           <li>Coupons</li>
         </ul>
-        <ul className="flex gap-6 justify-center mt-7">
+        <ul className="flex gap-6 justify-center mt-8">
           <li>
             <img src={wifi} alt="" />
           </li>

@@ -18,7 +18,7 @@ const OnlyModal: React.FC<ModalProps> = (props) => {
   const time = timeAgo(props?.published_date);
   return (
     <>
-      <div className="md:block hidden fixed z-[250]  4xl:top-36 top-24 left-1/2 transform -translate-x-1/2 p-6 pt-0 rounded-lg w-[95vw]  h-[596px] 4xl:w-[1462px] bg-white">
+      <div className="md:block hidden fixed z-[250]  4xl:top-56 top-24 left-1/2 transform -translate-x-1/2 p-6 pt-0 rounded-lg w-[95vw]  h-[596px] 4xl:w-[1462px] bg-white">
         <div className="flex justify-end pt-3 absolute right-3">
           <img
             src={cross}
@@ -28,7 +28,7 @@ const OnlyModal: React.FC<ModalProps> = (props) => {
           />
         </div>
         <AllDetails
-          marginTop="40px"
+          marginTop="48px"
           width="750px"
           widths="540px"
           title={props?.title}
@@ -40,7 +40,7 @@ const OnlyModal: React.FC<ModalProps> = (props) => {
         />
       </div>
 
-      <div className="block md:hidden fixed overflow-y-scroll h-[80vh] pb-4 mb-4 z-[250] top-[104px] w-[92vw]  left-1/2 transform -translate-x-1/2 p-6 pt-0 rounded-lg  bg-white">
+      <div className="block md:hidden fixed overflow-y-scroll max-h-[83vh] pb-4 mb-4 z-[250] top-[104px] w-[92vw]  left-1/2 transform -translate-x-1/2 p-6 pt-0 rounded-lg  bg-white">
         <div className="flex justify-end relative left-3">
           <img
             src={cross}
@@ -55,12 +55,12 @@ const OnlyModal: React.FC<ModalProps> = (props) => {
             className="h-[347px] w-full flex justify-center items-center text-center"
             alt="image of your card"
           />
-          <p className="text-red font-bold mt-6 mb-2">Trending</p>
-          <h1 className="text-2xl font-semibold font-serif ">{props?.title}</h1>
-          <p className="text-gray text-sm mt-2">{props?.abstract}</p>
+          <p className="text-red font-bold mt-6 mb-2 font-poppins">Trending</p>
+          <h1 className="text-2xl font-semibold font-plex">{props?.title}</h1>
+          <p className="text-gray text-sm mt-2 font-poppins">{props?.abstract}</p>
           <div className=" w-full mt-2 mb-[34px]">
-            <p className="text-sm text-center ">{time}</p>
-            <p className="pt-2 text-center text-sm text-gray opacity-70">
+            <p className="text-sm text-center font-poppins">{time}</p>
+            <p className="pt-1 text-center text-sm text-gray opacity-70 font-poppins">
               {props?.byline} | {time}
             </p>
           </div>
