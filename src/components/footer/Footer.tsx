@@ -6,15 +6,15 @@ import fb from "../../assets/icons/footer/fb.svg";
 
 const Footer = () => {
   return (
-    <div className="bg-blue text-white">
-      <div className=" h-[250px] md:flex 3xl:w-[1366px] xl:w-[100vw] mx-auto hidden justify-around items-center">
+    <div className="bg-blue md:h-[250px] md:pt-[79px] md:pb-[54px] text-white">
+      <div className=" md:h-[117px] h-[250px]  md:flex 3xl:w-[1366px] xl:w-[100vw] mx-auto hidden justify-around items-center">
         <div className="flex flex-col items-center justify-center gap-10">
           <img src={image} alt="logo" className="w-[66px] h-[40px]" />
           <p className="text-white font-poppins text-xs">
             copyright © 2020 | NBC NEWS
           </p>
         </div>
-        <ul className="font-poppins leading-8 font-medium text-sm">
+        <ul className="font-poppins leading-[26px] font-medium text-sm">
           <li>Privacy Policy</li>
           <li>Do not sell my personal info</li>
           <li>Terms of Services</li>
@@ -43,7 +43,7 @@ const Footer = () => {
           </ul>
         </div>
       </div>
-      <div className="md:hidden block pb-4 font-poppins">
+      <div className="md:hidden block pb-[48px] font-poppins">
         <div className="items-center flex flex-col gap-2 pb-4 pt-[20px]">
           <img src={image} alt="logo" className="h-[40px] block mx-auto " />
           <p className="text-slate-400">copyright © 2020 | NBC NEWS</p>

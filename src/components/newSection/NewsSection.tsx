@@ -6,7 +6,7 @@ const NewsSection: React.FC<{ children: React.ReactNode }> = (props) => {
   const { small, handleViewMore, data } = useNewsHandle();
 
   return (
-    <div className="md:mt-10 mt-0 overflow-x-hidden overflow-y-hidden pb-[60px]">
+    <div className="md:mt-10 mt-0 overflow-x-hidden overflow-y-hidden md:pb-[60px] pb-6">
       {props.children}
       <Cards data={small ? data?.slice(0, 6) : data} />
 

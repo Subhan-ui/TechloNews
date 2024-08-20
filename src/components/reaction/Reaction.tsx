@@ -6,7 +6,7 @@ const Reaction: React.FC<{ className: string }> = (props) => {
   return (
     <>
       <ul
-        className={`flex gap-6  justify-center items-center ${props.className}`}
+        className={`flex gap-6 4xl:w-[140px] 4xl:h-[16px] justify-center items-center ${props.className}`}
       >
         <li className="flex gap-1.5 text-[10px]  justify-center items-center  font-poppins">
           <img src={heart} alt="" className="w-[18px] h-[16px]" /> 234

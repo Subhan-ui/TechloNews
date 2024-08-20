@@ -17,13 +17,13 @@ const Card: React.FC<CardData> = (props) => {
   return (
     <>
       <div
-        className="md:w-[437px] mb-[4px] w-[344px] h-[479px] md:h-[520px] bg-white relative"
+        className="md:w-[437px] shadow-lg rounded-md mb-[4px] w-[344px] h-[479px] md:h-[520px] bg-white relative"
         onClick={handleSelection}
       >
         <img
           src={props?.image || image}
           alt="image of card"
-          className="h-[210px] w-full"
+          className="h-[210px] w-full rounded-t-md"
         />
         <h4 className="font-semibold font-plex text-lg mt-[15px] md:px-[25px] px-5">
           {truncateString(props?.title, 14)}
@@ -32,9 +32,9 @@ const Card: React.FC<CardData> = (props) => {
           {truncateString(props?.abstract, 20)}
         </p>
         <div className="absolute w-full bottom-0 ">
-          <span className="relative md:left-[35px] left-7  ">
+          <div className="relative w-[400px] md:left-[35px] left-7  ">
             <Time time={time} writer={truncateString(props?.writer, 3)} />
-          </span>
+          </div>
           <hr className="md:mt-5 mt-3" />
           <div className="md:h-14 h-[52px] flex justify-center items-center">
             <Reaction className="h-10 gap-[30px]" />

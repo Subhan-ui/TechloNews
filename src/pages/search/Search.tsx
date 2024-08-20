@@ -3,14 +3,16 @@ import search from "../../assets/icons/search.svg";
 import SearchSection from "../../components/searchSection/SearchSection";
 import useQuery from "../../hooks/useQuery";
 import Loader from "../../components/loader/Loader";
+import useSearch from "../../hooks/useSearch";
 
 const Search = () => {
   const { isLoading, handleSubmit, searchText, loading, empty, handleChange } =
     useQuery();
+    const {data} = useSearch();
 
   return (
     <>
-      <div className="w-full mt-[256px] md:mt-0 h-[50vh] md:h-[89vh] flex gap-16 flex-col items-center md:justify-center justify-start">
+      <div className={`w-full  ${data.length!==0?'mb-[304px] md:mb-[263px] md:mt-[322px] mt-[256px]':'md:h-[89vh] h-[65px]'}  flex gap-16 flex-col items-center md:justify-center justify-start`}>
         <h1 className="md:text-5xl text-center w-full text-3xl font-semibold font-plex">
           Search News
         </h1>

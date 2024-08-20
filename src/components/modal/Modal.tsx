@@ -40,7 +40,7 @@ const OnlyModal: React.FC<ModalProps> = (props) => {
         />
       </div>
 
-      <div className="block md:hidden fixed overflow-y-scroll max-h-[83vh] pb-4 mb-4 z-[250] top-[104px] w-[92vw]  left-1/2 transform -translate-x-1/2 p-6 pt-0 rounded-lg  bg-white">
+      <div className="block md:hidden fixed overflow-y-scroll max-h-[calc(100vh-104px)] pb-4 mb-4 z-[250] top-[104px] w-[92vw]  left-1/2 transform -translate-x-1/2 p-6 pt-0 rounded-lg  bg-white">
         <div className="flex justify-end relative left-3">
           <img
             src={cross}

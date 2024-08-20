@@ -5,7 +5,7 @@ const SearchSection: React.FC<{ children: React.ReactNode }> = (props) => {
   const { small, handleViewMore, data } = useSearch();
 
   return (
-    data.length > 0 && (
+    data&&data.length > 0 && (
       <div className="md:mt-8 mt-0 overflow-x-hidden ">
         {props.children}
 
