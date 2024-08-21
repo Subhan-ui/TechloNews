@@ -26,10 +26,10 @@ const Card: React.FC<CardData> = (props) => {
           className="h-[210px] w-full rounded-t-md"
         />
         <h4 className="font-semibold font-plex text-lg mt-[15px] md:px-[25px] px-5">
-          {truncateString(props?.title, 14)}
+          {truncateString(props?.title, 8)}
         </h4>
         <p className="text-sm leading-[22px] md:mt-[17px] mt-[8px] font-nunito text-gray md:px-6 px-5">
-          {truncateString(props?.abstract, 20)}
+          {truncateString(props?.abstract, 15)}
         </p>
         <div className="absolute w-full bottom-0 ">
           <div className="relative w-[400px] md:left-[35px] left-7  ">

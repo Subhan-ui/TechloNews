@@ -10,7 +10,7 @@ function App() {
     <Router>
       <Layout>
         <div className="bg-lightGray overflow-y-hidden">
-          <div className="relative 3xl:w-[1366px] w-full mx-auto overflow-x-hidden">
+          <div className="relative 3xl:w-[1366px] xl:w-[1100px] lg:w-[980px] md:w-[821px] w-full mx-auto overflow-x-hidden">
             <Routes>
               <Route path="/" element={<Hero />} />
               <Route path="/search" element={<Search />} />

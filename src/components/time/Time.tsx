@@ -5,8 +5,8 @@ const Time: React.FC<timeType> = (props) => {
     <div className="">
       <p className="text-[13px] text-gray mt-[30px] font-poppins">
         {props.time}
-        <span className="text-xs ml-3 text-gray">
-          {props.writer} | 4min read
+        <span className="text-xs ml-2 text-gray">
+          {props.writer} | 4min
         </span>
       </p>
     </div>
