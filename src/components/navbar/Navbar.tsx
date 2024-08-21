@@ -23,7 +23,7 @@ const Navbar = () => {
 
   return (
     <nav className="w-[100vw] bg-white fixed z-[500] ">
-      <div className="3xl:w-[1366px] w-[100vw] mx-auto xl:px-9 md:px-8 px-6 flex  h-[80px] 3xl:justify-start justify-between items-center">
+      <div className="3xl:w-[1366px] w-[100vw] mx-auto xl:px-[18px] md:px-8 px-6 flex  h-[80px] 3xl:justify-start justify-between items-center">
         <Link to="/">
           <img src={img} alt="Navbar-Image" className=" md:w-[62px] md:h-[52px] w-[49px] h-[40px] 3xl:mr-[124px]" />
         </Link>

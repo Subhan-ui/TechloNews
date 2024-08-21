@@ -26,7 +26,7 @@ const AllDetails: React.FC<allDetailType> = (props) => {
             <h4 className="font-bold 3xl:mb-[20px] xl:mb-[15px] md:mb-[10px] 3xl:leading-10 xl:leading-7 md:leading-5 3xl:text-3xl xl:text-2xl md:text-xl  text-left font-plex text-gray">
               {props?.title}
             </h4>
-            <p className="xl:text-[15px] text-xs text-gray leading-6 font-poppins">
+            <p className="xl:text-[15px] 3xl:w-[500px] text-xs text-gray leading-6 font-poppins">
               {props?.abstract}
             </p>
           </div>
