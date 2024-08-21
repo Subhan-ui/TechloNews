@@ -33,7 +33,7 @@ const Card: React.FC<CardData> = (props) => {
         </p>
         <div className="absolute w-full bottom-0 ">
           <div className="relative w-[400px] md:left-[35px] left-7  ">
-            <Time time={time} writer={truncateString(props?.writer, 3)} />
+            <Time time={time} writer={truncateString(props?.writer, 2)} />
           </div>
           <hr className="md:mt-5 mt-3" />
           <div className="md:h-14 h-[52px] flex justify-center items-center">
