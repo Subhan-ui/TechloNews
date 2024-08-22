@@ -8,13 +8,13 @@ const Footer = () => {
   return (
     <div className="bg-blue md:h-[250px] md:pt-[79px] md:pb-[54px] text-white">
       <div className=" md:h-[117px] h-[250px]  md:flex 3xl:w-[1366px] xl:w-[100vw] mx-auto hidden justify-around items-center">
-        <div className="flex flex-col items-center justify-center gap-10">
+        <div className="flex flex-col 3xl:w-[189px] 3xl:h-[107px] items-center justify-center gap-10">
           <img src={image} alt="logo" className="w-[66px] h-[40px]" />
           <p className="text-white font-poppins text-xs">
             copyright © 2020 | NBC NEWS
           </p>
         </div>
-        <ul className="font-poppins leading-[26px] font-medium text-sm">
+        <ul className="font-poppins leading-[31.5px] 3xl:w-[221px] 3xl:h-[116px] font-medium text-sm">
           <li>Privacy Policy</li>
           <li>Do not sell my personal info</li>
           <li>Terms of Services</li>
