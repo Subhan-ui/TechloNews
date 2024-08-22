@@ -17,7 +17,7 @@ const Card: React.FC<CardData> = (props) => {
   return (
     <>
       <div
-        className="md:w-[437px] shadow-lg rounded-md mb-[4px] w-[344px] h-[479px] md:h-[520px] bg-white relative"
+        className="md:w-[437px] shadow-lg rounded-md mb-[5px] w-[344px] h-[479px] md:h-[520px] bg-white relative"
         onClick={handleSelection}
       >
         <img

@@ -5,7 +5,7 @@ import { NYTResponse } from "../../types/types";
 const Cards: React.FC<{ data: NYTResponse }> = (props) => {
   return (
     <>
-      <div className="mt-2 flex justify-center gap-[26px] md:mx-0 mx-2 flex-wrap px-[1px]">
+      <div className="mt-2 flex justify-center gap-[25px] md:mx-0 mx-2 flex-wrap px-[1px]">
         {props?.data && props?.data?.map((arr) => {
           return (
             <Card
