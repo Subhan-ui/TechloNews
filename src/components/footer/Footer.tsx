@@ -48,7 +48,7 @@ const Footer = () => {
           <img src={image} alt="logo" className="h-[40px] block mx-auto " />
           <p className="text-slate-400">copyright © 2020 | NBC NEWS</p>
         </div>
-        <ul className="text-center font-bold">
+        <ul className="text-center font-bold text-sm">
           <li>About</li>
           <li>Contact</li>
           <li>Career</li>
